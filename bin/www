@@ -2,7 +2,7 @@
 
 import globalIniter from '../server/inits/global';
 import deb from 'debug';
-const debug = deb('server');
+const debug = deb('server:default');
 import http from 'http';
 globalIniter.init({ debug });
 

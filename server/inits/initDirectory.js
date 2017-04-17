@@ -7,7 +7,7 @@
               const ioHelper = appUtils.requireCommon('ioHelper');
               const exists = ioHelper.existsSync(dir);
               if (!exists) {
-                  ioHelper.mkdir(dir).then(() => {
+                  ioHelper.makeDir(dir).then(() => {
                       debug(`directory:${dir} OK.`);
                   });
               } else {

@@ -16,14 +16,14 @@
         "dev": {
             "command": "nodemon  --config ./common/configs/nodemon.json",
             "env": {
-                "node_env": "development",
+                "NODE_ENV": "development",
                 "DEBUG": "server"
             }
         },
         "prod": {
             "command": "nodemon  --config ./common/configs/nodemon.json",
             "env": {
-                "node_env": "production"
+                "NODE_ENV": "production"
             }
         },
         "koa": "./node_modules/.bin/runkoa bin/www",

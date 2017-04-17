@@ -17,7 +17,7 @@ export default {
             //程序根目录
             ROOT_PATH: process.cwd(),
             //运行模式 开发模式还是其他 默认不传则为开发模式  development开发环境状态  production生产环境状态 test测试环境模式
-            NODE_ENV: process.argv.node_env || 'development',
+            NODE_ENV: process.argv.NODE_ENV || 'development',
             //配置模式 默认直接读common/configs/appConfig  如果配置了则增加一个文件夹路径   common/configs/${CONFIG_MODE}/appConfig 
             CONFIG_MODE: process.argv.CONFIG_MODE || '',
             //全局promise重新定义为bluebird

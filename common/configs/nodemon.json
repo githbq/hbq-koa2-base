@@ -26,7 +26,7 @@
         "globalVariables/**/*.js"
     ],
     "env": {
-        "node_env": "development"
+        "NODE_ENV": "development"
     },
     "ext": "js json"
 }

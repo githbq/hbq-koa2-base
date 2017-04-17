@@ -98,7 +98,7 @@
         "supertest": "^1.2.0",
         "tree-cli": "^0.4.12"
     },
-    "main": "index.js",
+    "main": "app.js",
     "repository": "git@github.com:githbq/hbq-koa2-base.git",
     "author": "hubiqing",
     "license": "MIT"

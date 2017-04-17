@@ -1,6 +1,6 @@
 {
     "name": "koa2-base",
-    "version": "1.0.0",
+    "version": "0.0.1",
     "scripts": {
         "clean": "rimraf node_modules",
         "start": "better-npm-run dev",

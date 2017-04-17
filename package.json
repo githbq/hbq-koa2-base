@@ -1,6 +1,6 @@
 {
     "name": "koa2-base",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "基于koa2搭建的一套完整架构",
     "scripts": {
         "clean": "rimraf node_modules",
@@ -38,9 +38,7 @@
         "debug": "^2.6.3",
         "ejs": "^2.5.6",
         "epipebomb": "^1.0.0",
-        "fs-extra": "^1.0.0",
-        "fs-promise": "^1.0.0",
-        "jquery": "^1.6.0",
+        "iohelper": "^0.0.5",
         "koa": "^2.0.0",
         "koa-better-body": "^3.0.2",
         "koa-bodyparser": "^2.0.1",
@@ -62,11 +60,8 @@
         "koa-static": "^2.0.0",
         "koa-static-cache": "^3.1.7",
         "koa-views": "^5.0.1",
-        "less": "^2.7.1",
-        "less2css": "^0.1.6",
         "lodash": "^4.17.2",
         "moment-helper": "^0.0.1",
-        "mz": "^2.6.0",
         "nodemon": "^1.9.1",
         "pm2": "^2.4.2",
         "pug": "^2.0.0-beta6",
@@ -76,11 +71,7 @@
         "spawn-helper": "^0.0.2",
         "stdout": "^0.0.3",
         "superagent": "^3.3.1",
-        "superagent-promise": "^1.1.0",
-        "thunkify": "^2.1.2",
-        "webpack": "2.2.0-rc.3",
-        "webpack-koa2-middleware": "^1.0.0",
-        "yarn-install": "^0.2.1"
+        "superagent-promise": "^1.1.0"
     },
     "devDependencies": {
         "better-npm-run": "0.0.14",

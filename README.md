@@ -1,4 +1,4 @@
-# koa2-base    运营系统后台
+# koa2-base  nodejs restful 后端
  
 ## 环境安装 
 ## 初始化操作

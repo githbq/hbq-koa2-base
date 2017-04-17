@@ -1,6 +1,6 @@
 {
     "name": "koa2-base",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "description": "基于koa2搭建的一套完整架构",
     "scripts": {
         "clean": "rimraf node_modules",

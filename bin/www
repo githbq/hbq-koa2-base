@@ -1,0 +1,71 @@
+#!/usr/bin/env node
+
+import globalIniter from '../server/inits/global';
+import deb from 'debug';
+const debug = deb('server');
+import http from 'http';
+globalIniter.init({ debug });
+
+
+//初始化全局变量
+
+//初始化koa app
+import appIniter from '../app';
+const app = appIniter.init({ debug });
+//初始化全局变量
+
+const config = global.APP_CONFIG;
+const starter = {
+    app,
+    server: app.server,
+    port: process.env.PORT || config.port,
+    run() {
+        this.app.on('error', this.onError);
+        this.app.on('listening', this.onListening);
+        //  这种模式可以使用https 
+        // let server = http.createServer(app.callback());
+        // server.listen(port);
+        // server.on('error', onError);
+        // server.on('listening', onListening);  
+        //app.listen   可以取消上面的代码 同时监听两个端口!!!
+        app.listen(this.port);
+        appUtils.log('启动端口 http://localhost:' + this.port);
+    },
+    onError(error) {
+        if (error.syscall !== 'listen') {
+            throw error;
+        }
+        let bind = typeof port === 'string' ?
+            'Pipe ' + port :
+            'Port ' + port;
+        switch (error.code) {
+            case 'EACCES':
+                appUtils.error(bind + ' requires elevated privileges');
+                process.exit(1);
+                break;
+            case 'EADDRINUSE':
+                appUtils.error(bind + ' is already in use');
+                process.exit(1);
+                break;
+            default:
+                throw error;
+        }
+    },
+    onListening() {
+        let addr = this.server.address();
+        let bind = typeof addr === 'string' ?
+            'pipe ' + addr :
+            'port ' + addr.port;
+        appUtils.log('Listening on ' + bind);
+    }
+};
+starter.run();
+
+//遇到EPIPE错误导致程序崩溃的时候 顺利关闭程序
+process.stdout.on('error', function(err) {
+    if (err.code == "EPIPE") {
+        process.exit(0);
+    }
+});
+//遇到EPIPE错误 解决方案
+require('epipebomb')();

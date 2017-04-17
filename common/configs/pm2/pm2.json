@@ -1,0 +1,21 @@
+{
+    "apps": [{
+        "name": "wuxianfe-koa2",
+        "script": "./bin/run",
+        "interpreter": "node",
+        "error_file": "temp/logs/err.log",
+        "out_file": "temp/logs/out.log",
+        "merge_logs": true,
+        "log_date_format": "YYYY-MM-DD HH:mm Z",
+        "env": {
+            "node_env": "production"
+        },
+        "node_args": [
+            "--harmony"
+        ],
+        "watch": false,
+        "max_restarts": 15,
+        "exec_mode": "fork",
+        "__pid_file": "./temp/app.pid"
+    }]
+}

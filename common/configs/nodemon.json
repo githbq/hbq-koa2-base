@@ -1,0 +1,32 @@
+{
+    "restartable": "rs",
+    "legacy-watch": true,
+    "cleanly": true,
+    "ignore": [
+        ".git",
+        "node_modules/**/node_modules",
+        "./website"
+    ],
+    "verbose": true,
+    "events":{ 
+    },
+    "execMap": {
+        "": "node",
+        "js": "node --harmony"
+    },
+    "exec": "node ./bin/run",
+    "watch": [
+        "config.js",
+        "app.js",
+        "common/**/*.js",
+        "controller/**/*.js",
+        "model/**/*.js",
+        "routes/**/*.js",
+        "server/**/*.js",
+        "globalVariables/**/*.js"
+    ],
+    "env": {
+        "NODE_ENV": "development"
+    },
+    "ext": "js json"
+}

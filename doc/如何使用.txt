@@ -1,0 +1,6 @@
+1.npm i 安装包 
+2. npm start 跑起命令
+3. 访问地址 http://localhost:4005/tests/db
+
+debugger
+调用可以将doc下的  doc.vscode替换掉.vscode文件夹下的内容进行调试

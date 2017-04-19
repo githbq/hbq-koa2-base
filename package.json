@@ -1,6 +1,6 @@
 {
     "name": "koa2-base",
-    "version": "0.0.8",
+    "version": "0.0.9",
     "description": "基于koa2搭建的一套完整架构",
     "scripts": {
         "clean": "rimraf node_modules",
@@ -38,7 +38,7 @@
         "debug": "^2.6.3",
         "ejs": "^2.5.6",
         "epipebomb": "^1.0.0",
-        "iohelper": "^0.0.5",
+        "io-helper": "^0.0.1",
         "koa": "^2.0.0",
         "koa-better-body": "^3.0.2",
         "koa-bodyparser": "^2.0.1",

@@ -1,1 +1,1 @@
-module.exports=require('iohelper');
+module.exports=require('io-helper');

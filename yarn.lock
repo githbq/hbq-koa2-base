@@ -2119,22 +2119,23 @@ invert-kv@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/invert-kv/-/invert-kv-1.0.0.tgz#104a8e4aaca6d3d8cd157a8ef8bfab2d7a3ffdb6"
 
-iohelper@^0.0.4:
-  version "0.0.4"
-  resolved "https://registry.npmjs.org/iohelper/-/iohelper-0.0.4.tgz#dc07bc53064216614dce9b1502495a4905d4816b"
+io-helper@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.npmjs.org/io-helper/-/io-helper-0.0.1.tgz#af211d83aa83c2baa82112c9d8aadc2124080612"
   dependencies:
     bluebird "^3.5.0"
     file-system "^2.2.2"
     fs-extra-promise "^1.0.1"
     json-stringify-pretty-compact "^1.0.3"
+    lodash "^4.17.4"
     mkdirp "^0.5.1"
     mkdirp-promise "^5.0.1"
     node-dir "^0.1.16"
     promise-path "^1.2.3"
 
-iohelper@^0.0.5:
-  version "0.0.5"
-  resolved "https://registry.npmjs.org/iohelper/-/iohelper-0.0.5.tgz#8693eeff3caa4a8d3918ace90a69176ca7443a83"
+io-helper@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.npmjs.org/io-helper/-/io-helper-0.0.4.tgz#dc07bc53064216614dce9b1502495a4905d4816b"
   dependencies:
     bluebird "^3.5.0"
     file-system "^2.2.2"
@@ -2815,7 +2816,7 @@ lodash@^3.10.1:
   version "3.10.1"
   resolved "https://registry.npmjs.org/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
 
-lodash@^4.11.1, lodash@^4.14.0, lodash@^4.17.2, lodash@^4.2.0, lodash@^4.5.1:
+lodash@^4.11.1, lodash@^4.14.0, lodash@^4.17.2, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.5.1:
   version "4.17.4"
   resolved "https://registry.npmjs.org/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
@@ -3936,7 +3937,7 @@ require-helper@^0.0.1:
   version "0.0.1"
   resolved "https://registry.npmjs.org/require-helper/-/require-helper-0.0.1.tgz#a9c9704731eac80a98e09d80251ca5a7eefe02d9"
   dependencies:
-    iohelper "^0.0.4"
+    io-helper "^0.0.4"
     require-dir "^0.3.1"
 
 require-main-filename@^1.0.1:

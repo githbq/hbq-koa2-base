@@ -5,7 +5,7 @@ export default (path, prefix, options) => {
         koaStatic(
             path,
             Object.assign({
-                prefix: prefix ? prefix : null,
+                prefix: prefix ? prefix : '',
                 maxAge: 365 * 24 * 60 * 60,
                 dynamic: true,
                 gzip: true

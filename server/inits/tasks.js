@@ -1,11 +1,12 @@
 //mongodb操作库
 import mongoose from 'mongoose';
 import Promise from 'bluebird';
+import log4js from 'koa-log4';
 //需要执行的初始化任务
 export default {
     //执行初始化
     run({ debug }) {
-        return { DB: this.DB({ debug }), APP_CACHE: this.APP_CACHE({ debug }) };
+        return { LOGGER: this.LOGGER({ debug }), DB: this.DB({ debug }), APP_CACHE: this.APP_CACHE({ debug }) };
     },
     DB({ debug }) {
         //初始化数据库 
@@ -29,5 +30,11 @@ export default {
         const cache = new CachemanMongo(APP_CONFIG.mongodb, { collection: APP_CONFIG.projectName + 'Cache' });
         Promise.promisifyAll(cache);
         return cache;
+    },
+    LOGGER() {
+        log4js.configure(appUtils.requireCommon('configs', 'log4js'), {
+            // reloadSecs: 300
+        })
+        return log4js.getLogger('log_date');
     }
 };

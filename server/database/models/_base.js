@@ -29,7 +29,7 @@ export default {
         countPromise = countPromise.exec();
         pagePromise = pagePromise.exec();
         return Q.all([countPromise, pagePromise]).spread((count, page) => { //两函数返回的两个值
-            return { total: count, data: page, pageIndex: param.pageIndex, pageSize: param.pageSize }
+            return { total: count, list: page, pageIndex: param.pageIndex, pageSize: param.pageSize }
         });
     },
     c_find(param) {

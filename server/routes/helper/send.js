@@ -1,8 +1,12 @@
- //创建直接访问文件的路由
- export let createSendRoute = (router, action, routeUrl, fileName, rootPath, callback) => {
-     router[action](routeUrl, async(ctx, next) => {
-         // await ctx.send(ctx, 'index.html', { root: 'public/ueditor' });
-         await ctx.send(ctx, fileName, { root: rootPath });
-         callback && callback(null, ctx, next);
-     });
+ import pathTool from 'path';
+ /**
+  * fileName 可以是一个路径或者是一个路径的数组会自动path.join
+   usage:
+    const { createSendRoute } = require('../helper/send');
+    createSendRoute(route, '/send1', ['upload', '1.jpg']);
+  */
+ export let createSendRoute = (router, routeUrl, fileName, nextMiddleWare) => {
+     router.get(routeUrl, async(ctx, next) => {
+         await ctx.send(ctx, pathTool.join.apply(null, [].concat(fileName)), { root: global.ROOT_PATH });
+     }, nextMiddleWare ? nextMiddleWare : () => {});
  };

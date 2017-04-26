@@ -17,9 +17,9 @@ export default {
             //程序根目录
             ROOT_PATH: process.cwd(),
             //运行模式 开发模式还是其他 默认不传则为开发模式  development开发环境状态  production生产环境状态 test测试环境模式
-            NODE_ENV: process.argv.NODE_ENV || 'development',
+            NODE_ENV: process.env.NODE_ENV || 'development',
             //配置模式 默认直接读common/configs/appConfig  如果配置了则增加一个文件夹路径   common/configs/${CONFIG_MODE}/appConfig 
-            CONFIG_MODE: process.argv.CONFIG_MODE || '',
+            CONFIG_MODE: process.env.CONFIG_MODE || '',
             //全局promise重新定义为bluebird
             Promise,
             //鲁大师 对象或集合操作辅助库
@@ -35,9 +35,9 @@ export default {
         });
         //进一步的配置
         Object.assign(
-            global, {
-                //全局程序配置文件路径 会根据CONFIG_MODE变化
-                APP_CONFIG: require(pathTool.join('../../common/configs', global.CONFIG_MODE, 'appConfig')),
+                global, {
+                    //全局程序配置文件路径 会根据CONFIG_MODE变化
+                    APP_CONFIG: require(pathTool.join('../../common/configs', `appConfig${global.CONFIG_MODE ? `-${global.CONFIG_MODE}` : ''}`)),
                 //common目录路径
                 COMMON_PATH: pathTool.resolve(global.ROOT_PATH, 'common'),
             }

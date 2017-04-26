@@ -4,28 +4,22 @@
     "cleanly": true,
     "ignore": [
         ".git",
-        "node_modules/**/node_modules",
+        "node_modules/**/*",
         "./website"
     ],
     "verbose": true,
-    "events":{ 
-    },
+    "events": {},
     "execMap": {
         "": "node",
         "js": "node --harmony"
     },
     "exec": "node ./bin/run",
     "watch": [
-        "config.js",
+        "bin/www",
         "app.js",
-        "common/**/*.js",
-        "controller/**/*.js",
-        "model/**/*.js",
-        "routes/**/*.js",
-        "server/**/*.js",
-        "globalVariables/**/*.js"
+        "common/**/*.js", 
+        "server/**/*.js" 
     ],
-    "env": { 
-    },
-    "ext": "js json"
+    "env": {},
+    "ext": " js json"
 }

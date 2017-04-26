@@ -2,7 +2,8 @@ import Koa from 'koa';
 import server from './server';
 //加载中间件
 const loadMiddleware = (name, ...args) => {
-    return require('./server/middlewares/' + name).apply(null, args) || async function() {};
+    const middleware = require('./server/middlewares/' + name);
+    return middleware.apply(null, args) || async function() {};
 }
 export default {
     init({ debug }) {
@@ -21,21 +22,16 @@ export default {
             'etag', //etag 客户端缓存处理
             'bodyParser', //body解析
             'json', // 传输JSON
-            'logger', //记录所用方式与时间
-
+            'logger', //记录所用方式与时间 
+            'views', //模板文件
+            'session', //session处理
             ['static', global.APP_CONFIG.staticPath], // 静态文件夹
             // 文件上传对应的静态文件夹
             ['static', global.APP_CONFIG.uploadPath, global.APP_CONFIG.uploadStaticPrefix],
-            'views', //模板文件
-            'session', //session处理
-
         ].forEach(n => app.use(loadMiddleware.apply(null, [].concat(n))));
+
         //其他始始化处理
-        server.init(app, { debug });
-        app.on('error', (err, ctx) => {
-            appUtils.log(err);
-            appUtils.error('server error', err, ctx);
-        });
+        server.init(app, { debug }); 
         return app;
     }
 }

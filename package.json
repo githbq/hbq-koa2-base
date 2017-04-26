@@ -1,13 +1,13 @@
 {
     "name": "koa2-base",
-    "version": "0.0.9",
+    "version": "0.1.0",
     "description": "基于koa2搭建的一套完整架构",
     "scripts": {
         "clean": "rimraf node_modules",
         "start": "better-npm-run dev",
         "prod": "better-npm-run prod",
         "pstart": "concurrently \"npm run start\" \"npm run open\"",
-        "open": "opn \"http://localhost:3602\"",
+        "open": "opn \"http://localhost:7000\"",
         "koa": "node ./bin/run",
         "pm2": "better-npm-run pm2",
         "tree:dir": "treee -l 2 --ignore node_modules/,.git/"
@@ -57,7 +57,6 @@
         "koa-session-mongoose": "^1.0.0",
         "koa-socket": "^4.4.0",
         "koa-socketio-cookie-helper": "^1.1.1",
-        "koa-static": "^2.0.0",
         "koa-static-cache": "^3.1.7",
         "koa-views": "^5.0.1",
         "lodash": "^4.17.2",
@@ -68,7 +67,6 @@
         "q": "^1.4.1",
         "require-helper": "^0.0.1",
         "runkoa": "^1.5.2",
-        "spawn-helper": "^0.0.2",
         "stdout": "^0.0.3",
         "superagent": "^3.3.1",
         "superagent-promise": "^1.1.0"

@@ -1,9 +1,7 @@
 import path from 'path';
 import log4js from 'koa-log4';
 export default () => {
-    log4js.configure(appUtils.requireCommon('configs', 'log4js'), {
-        reloadSecs: 300
-    })
+    //在inits/tasks 初始化全局log4js配置
     return log4js.koaLogger(log4js.getLogger('http'), {
         level: 'auto'
     });

@@ -9,6 +9,6 @@ export default {
     uploadStaticPrefix: 'attachment',
     port: 7000,
     secret: 'koaBase',
-    projectName: 'doraemonPlatform',
+    projectName: 'koaBase',
     rootPath: process.cwd()
 };

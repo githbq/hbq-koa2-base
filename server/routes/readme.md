@@ -2,6 +2,9 @@
 ## 一般用例,controller来自对应的controler相同目录结构下的文件
 ``` javascript
 export default (route, { controller }) => { 
+    //其他自定义 方法放上面
+    //...your routes
+    //
     route.post('/:_id', controller.add)
     route.delete('/:_id', controller.delete)
     route.put('/:_id', controller.update)

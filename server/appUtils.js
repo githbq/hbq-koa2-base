@@ -7,7 +7,7 @@ export default {
         try {
             return require(pathTool.join.apply(null, paths))
         } catch (e) {
-            this.error(`appUtils: path:${path} not exists  `)
+            this.info(`appUtils: path:${path} not exists  `)
         }
     },
     requireLib(name) {

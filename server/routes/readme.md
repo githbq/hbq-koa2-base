@@ -1,26 +1,5 @@
 
-# koa-router获取参数
- 
- ## 注意事项
- -  在route对象上定义  
- > route.noController=true; //表示这个路由不存在 controller就不会报出错误提示
-```javascript
-export default (route) => {
-    route.noController=true;
-    route.get('/', async(ctx, next) => {
-        await ctx.render('ejs/index.html', { title: 'Iam ejs' })
-    })
-}
-```
-
-
-
-
-
-
-
-
-
+# koa-router获取参数 
 
 ## 使用 ctx.request.body或者 ctx.request.fields取得post表单参数 
 ## 使用 ctx.query取得路径查询参数    url:  /a/b?x=1&y=2

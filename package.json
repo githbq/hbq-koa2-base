@@ -1,6 +1,6 @@
 {
     "name": "koa2-base",
-    "version": "0.1.1",
+    "version": "2.0.0",
     "description": "基于koa2搭建的一套完整架构",
     "scripts": {
         "clean": "rimraf node_modules",
@@ -38,7 +38,8 @@
         "debug": "^2.6.3",
         "ejs": "^2.5.6",
         "epipebomb": "^1.0.0",
-        "io-helper": "^0.0.1",
+        "escape-string-regexp": "^1.0.5",
+        "io-helper": "^0.0.5",
         "koa": "^2.0.0",
         "koa-better-body": "^3.0.2",
         "koa-bodyparser": "^2.0.1",
@@ -61,12 +62,13 @@
         "koa-views": "^5.0.1",
         "lodash": "^4.17.2",
         "moment-helper": "^0.0.1",
+        "mongo-model-statics": "^0.0.2",
         "nodemon": "^1.9.1",
-        "pm2": "^2.4.2",
         "pug": "^2.0.0-beta6",
         "q": "^1.4.1",
-        "require-helper": "^0.0.1",
-        "runkoa": "^1.5.2",
+        "require-helper": "^0.0.5",
+        "runkoa": "^1.5.9",
+        "spawn-helper": "^0.0.2",
         "stdout": "^0.0.3",
         "superagent": "^3.3.1",
         "superagent-promise": "^1.1.0"
@@ -74,12 +76,10 @@
     "devDependencies": {
         "better-npm-run": "0.0.14",
         "concurrently": "^3.1.0",
-        "cross-env": "^3.1.4",
         "lite-server": "^2.2.2",
         "mocha": "^2.4.5",
         "opn-cli": "^3.1.0",
         "rimraf": "^2.5.4",
-        "should": "^8.3.0",
         "supertest": "^1.2.0",
         "tree-cli": "^0.4.12"
     },

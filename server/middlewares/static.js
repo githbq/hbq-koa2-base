@@ -1,5 +1,5 @@
-import koaStatic from 'koa-static-cache';
-import convert from 'koa-convert';
+import koaStatic from 'koa-static-cache'
+import convert from 'koa-convert'
 export default (path, prefix, options) => {
     return convert(
         koaStatic(

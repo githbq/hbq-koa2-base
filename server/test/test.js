@@ -13,10 +13,10 @@ describe('Koa GET /', function(){
       .expect('Content-Type', /text/)
       .end(function(err, res) {
         // console.log(res)
-        res.status.should.equal(200);
+        res.status.should.equal(200)
         // console.log(res.text)
-        res.text.should.equal('<!DOCTYPE html><html><head><title>koa2 title</title><link rel="stylesheet" href="/stylesheets/style.css"></head><body><h1>koa2 title</h1><p>JADE Welcome to koa2 title</p></body></html>');
-        done();
-      });
+        res.text.should.equal('<!DOCTYPE html><html><head><title>koa2 title</title><link rel="stylesheet" href="/stylesheets/style.css"></head><body><h1>koa2 title</h1><p>JADE Welcome to koa2 title</p></body></html>')
+        done()
+      })
   })
 })

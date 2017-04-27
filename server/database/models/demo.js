@@ -6,7 +6,7 @@
  export default (mongoose, Schema) => {
      return {
          //定义mongodb的字段
-         Schema: {
+         props: {
              name: {
                  type: Schema.Types.String,
                  required: true
@@ -15,31 +15,31 @@
          //静态方法
          statics: {
              save() {
-                 return this.c_add({ name: 'AAAAAAAAAAAAA2222' });
+                 return this.c_add({ name: 'lucy' })
              },
              deleteById(id) {
                  return this.find({
                      '_id': id
-                 }).remove().exec();
+                 }).remove().exec()
              },
              getTitleById(id) {
-                 let data = this.c_findById(id);
-                 return data.then((result) => { return result ? result.title : ''; });
+                 let data = this.c_findById(id)
+                 return data.then((result) => { return result ? result.title : '' })
              },
              add() {
-                 var x = this.update({}, { name: 'xxxxxxxx' }, { multi: true }, () => {
-                     console.log('update');
-                 });
-                 var model = new this({ name: Math.random() + 'AAAAAAAAAAAAA' });
-                 return model.save();
+                 var x = this.update({}, { name: 'hanmeimei' }, { multi: true }, () => {
+                     console.log('update')
+                 })
+                 var model = new this({ name: Math.random() + 'lili' })
+                 return model.save()
              },
              getBlogById(id) {
                  return this.findOne({
                      '_id': id
-                 }).exec();
+                 }).exec()
              },
              getDemos() {
-                 return this.find().exec();
+                 return this.find().exec()
              },
              getLatestPosts() {
                  return this
@@ -47,7 +47,7 @@
                      .sort('field -create_time')
                      .limit(15)
                      .find()
-                     .exec();
+                     .exec()
              },
              getCategoryPosts(category) {
                  return this
@@ -55,7 +55,7 @@
                          'category': category
                      })
                      .sort('field -create_time')
-                     .exec();
+                     .exec()
              },
              getBlogsByTag(tag) {
                  return this
@@ -63,12 +63,12 @@
                          'tags': tag
                      })
                      .sort('field -create_time')
-                     .exec();
+                     .exec()
              },
              deleteById(id) {
                  return this.find({
                      '_id': id
-                 }).remove().exec();
+                 }).remove().exec()
              }
          }
      }

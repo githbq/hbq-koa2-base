@@ -1,5 +1,5 @@
-import favicon from 'koa-favicon';
-import convert from 'koa-convert';
+import favicon from 'koa-favicon'
+import convert from 'koa-convert'
 export default () => {
-    return convert(favicon('../../public/favicon.ico'));
+    return convert(favicon('../../public/favicon.ico'))
 }

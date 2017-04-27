@@ -1,4 +1,7 @@
 /**
- * 日期操作
+ * 日期操作助手
  */
-module.exports=require('moment-helper'); 
+import momentHelper from 'moment-helper'
+export default {
+    ...momentHelper,
+}

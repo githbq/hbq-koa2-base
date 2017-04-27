@@ -11,7 +11,7 @@ class KoaErr extends Error {
 
 export default () => {
     return async(ctx, next) => {
-        ctx.Err = KoaErr;
-        await next();
+        ctx.Err = KoaErr
+        await next()
     }
 }

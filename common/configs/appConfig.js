@@ -1,4 +1,4 @@
-import path from 'path';
+import path from 'path'
 export default {
     mongodb: 'mongodb://127.0.0.1:27017/koaBase',
     apiPrefix: 'api',
@@ -11,4 +11,4 @@ export default {
     secret: 'koaBase',
     projectName: 'koaBase',
     rootPath: process.cwd()
-};
+}

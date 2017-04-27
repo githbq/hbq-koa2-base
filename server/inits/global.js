@@ -1,12 +1,12 @@
-import pathTool from 'path';
-import _ from 'lodash';
-import Promise from 'bluebird';
+import pathTool from 'path'
+import _ from 'lodash'
+import Promise from 'bluebird'
 //异步库
-import Q from 'q';
+import Q from 'q'
 //应用程序工具库
-import appUtils from '../appUtils';
+import appUtils from '../appUtils'
 //需要执行的初始化任务 比如数据库 缓存库
-import tasks from './tasks';
+import tasks from './tasks'
 /**
  * global文件会在应用程序最开始被执行  优先执行
  */
@@ -28,11 +28,11 @@ export default {
             Q,
             //格式化JSON输出统一化
             JSONResponse(status, data, message) {
-                return { status, data, message };
+                return { status, data, message }
             },
             //全局工具方法
             appUtils
-        });
+        })
         //进一步的配置
         Object.assign(
                 global, {
@@ -41,10 +41,10 @@ export default {
                 //common目录路径
                 COMMON_PATH: pathTool.resolve(global.ROOT_PATH, 'common'),
             }
-        );
+        )
         //其他初始化任务
         Object.assign(global,
             tasks.run({ debug })
         )
     }
-};
+}

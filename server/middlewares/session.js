@@ -1,6 +1,6 @@
-import convert from 'koa-convert';
-import session from 'koa-generic-session';
-import MongooseStore from 'koa-session-mongoose';
+import convert from 'koa-convert'
+import session from 'koa-generic-session'
+import MongooseStore from 'koa-session-mongoose'
 export default () => { 
     return convert(
         session({
@@ -11,5 +11,5 @@ export default () => {
                 model: `${APP_CONFIG.projectName}Session`
             })
         })
-    );
+    )
 }

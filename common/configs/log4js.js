@@ -17,4 +17,4 @@ export default {
         console: 'ALL',
         log_date: 'ALL'
     }
-};
+}

@@ -1,2 +1,7 @@
-//自动加载对应目录的文件内容
-module.exports=require('require-helper');
+/**
+ * 库加载助手
+ */
+import requireHelper from 'require-helper'
+export default {
+...requireHelper,
+} 

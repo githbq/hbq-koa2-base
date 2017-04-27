@@ -1,4 +1,4 @@
-1.npm i 安装包 
+1. npm i 安装包 
 2. npm start 跑起命令
 3. 访问地址 http://localhost:4005/tests/db
 

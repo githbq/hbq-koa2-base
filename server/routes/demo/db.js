@@ -1,6 +1,7 @@
-export default (route, { controller }) => {
-    //标准分页的写法   使用路径参数
-    route.get('/page/:pageSize/:pageIndex', controller.page)
-    route.get('/insert', controller.insert)
-    route.get('/save', controller.save)
+export default (route, { controller }) => { 
+    route.post('/:_id', controller.add)
+    route.delete('/:_id', controller.delete)
+    route.put('/:_id', controller.update)
+    route.get('/page/:pageSize/:pageIndex', controller.getPage)
+    route.get('/:_id', controller.getById)
 }

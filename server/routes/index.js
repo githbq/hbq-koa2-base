@@ -14,6 +14,7 @@ export default {
                 route = koaRouter()
                     //如果里面没有retur route 则直接使用引用传递的这个route
                 const controller = appUtils.requireController(n.fullname)
+                debugger
                 n.result(route, { logger, debug, controller: controller ? controller({ logger, debug }) : undefined })
             }
             return { route, name: n.fullname }

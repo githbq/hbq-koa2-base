@@ -1,4 +1,14 @@
-
+# koa路由 目录
+## 一般用例,controller来自对应的controler相同目录结构下的文件
+``` javascript
+export default (route, { controller }) => { 
+    route.post('/:_id', controller.add)
+    route.delete('/:_id', controller.delete)
+    route.put('/:_id', controller.update)
+    route.get('/page/:pageSize/:pageIndex', controller.getPage)
+    route.get('/:_id', controller.getById)
+}
+```
 # koa-router获取参数 
 
 ## 使用 ctx.request.body或者 ctx.request.fields取得post表单参数 

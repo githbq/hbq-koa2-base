@@ -1,8 +1,12 @@
+# 业务逻辑文件夹
+## 主要用来存放业务逻辑
+### 示例
+``` javascript
 /**
- * 活动
+ * demo
  */
 export default ({ debug, logger }) => {
-    const model = DB.models.activity;
+    const model = DB.models.demo;
     return {
         async add(ctx, next) {
             const result = await model._add(ctx.request.fields)
@@ -26,3 +30,4 @@ export default ({ debug, logger }) => {
         }
     }
 }
+```

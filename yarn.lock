@@ -2047,9 +2047,9 @@ io-helper@^0.0.5:
     promise-path "^1.2.3"
     readline-promise "^0.0.1"
 
-io-helper@^0.0.6:
-  version "0.0.6"
-  resolved "https://registry.npmjs.org/io-helper/-/io-helper-0.0.6.tgz#9515c33489dbb7b62f4cdcfa91b8c0d912e75f2c"
+io-helper@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.npmjs.org/io-helper/-/io-helper-0.0.7.tgz#a37ebefdddb88de50be4dbc1a2292eb2ec39a901"
   dependencies:
     bluebird "^3.5.0"
     file-system "^2.2.2"

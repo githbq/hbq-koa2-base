@@ -2,7 +2,7 @@
  * 活动
  */
 export default ({ debug, logger }) => {
-    const model = DB.models.activity;
+    const model = DB.models.demo
     return {
         async add(ctx, next) {
             const result = await model._add(ctx.request.fields)

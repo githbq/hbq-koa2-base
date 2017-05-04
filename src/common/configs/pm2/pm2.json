@@ -1,6 +1,6 @@
 {
     "apps": [{
-        "name": "doraemon-platform",
+        "name": "koa2Base-platform",
         "script": "./run.js",
         "interpreter": "node",
         "error_file": "temp/logs/err.log",

@@ -1,4 +1,0 @@
-#!/usr/bin/env node
-var path = require('path')
-require('runkoa')(path.resolve('./bin/www'))
- 

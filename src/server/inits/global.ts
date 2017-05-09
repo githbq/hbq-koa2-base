@@ -9,7 +9,7 @@ import appUtils from '../appUtils'
 import tasks from './tasks'
 /**
  * global文件会在应用程序最开始被执行  优先执行
- */ 
+ */
 export default {
     init({ debug }) {
         //向global添加全局对象
@@ -44,7 +44,7 @@ export default {
         )
         //其他初始化任务
         Object.assign(global,
-            // tasks.run({ debug })
+            tasks.run({ debug })
         )
     }
 }

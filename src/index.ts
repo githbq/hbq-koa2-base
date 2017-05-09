@@ -51,7 +51,7 @@ const starter = {
     },
     onListening() {
         let { port } = this.address()
-        appUtils.log(chalk.blue.bgWhite(`✅ 启动端口 http://127.0.0.1:${port}`))
+        appUtils.log(chalk.blue.bgWhite(`✅ 启动端口 http://0.0.0.0:${port}`))
     }
 }
 starter.run()

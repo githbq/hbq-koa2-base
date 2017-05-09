@@ -38,7 +38,7 @@ export default class MongoStore {
           options.database = options.database || options.db;
           options.hosts = options.hosts || [{
             port: options.port || 27017,
-            host: options.host || '127.0.0.1'
+            host: options.host || '0.0.0.0'
           }];
           conn = uri.format(options);
         }
@@ -47,7 +47,7 @@ export default class MongoStore {
       }
     }
 
-    conn = conn || 'mongodb://127.0.0.1:27017';
+    conn = conn || 'mongodb://0.0.0.0:27017';
     var coll = this.coll = options.collection || 'cacheman';
     this.compression = options.compression || false;
     this.ready = thunky((cb) => {

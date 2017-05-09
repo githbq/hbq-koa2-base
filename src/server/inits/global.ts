@@ -44,7 +44,7 @@ export default {
         )
         //其他初始化任务
         Object.assign(global,
-            tasks.run({ debug })
+            // tasks.run({ debug })
         )
     }
 }

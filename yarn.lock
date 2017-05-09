@@ -729,13 +729,17 @@ date-fns@^1.23.0:
   version "1.28.4"
   resolved "https://registry.npmjs.org/date-fns/-/date-fns-1.28.4.tgz#7938aec34ba31fc8bd134d2344bc2e0bbfd95165"
 
+date-format@^0.0.0:
+  version "0.0.0"
+  resolved "https://registry.npmjs.org/date-format/-/date-format-0.0.0.tgz#09206863ab070eb459acea5542cbd856b11966b3"
+
 debug@*, debug@2, debug@^2.1.3, debug@^2.2.0, debug@^2.6.3:
   version "2.6.4"
   resolved "https://registry.npmjs.org/debug/-/debug-2.6.4.tgz#7586a9b3c39741c0282ae33445c4e8ac74734fe0"
   dependencies:
     ms "0.7.3"
 
-debug@0.7.4:
+debug@0.7.4, debug@^0.7.2:
   version "0.7.4"
   resolved "https://registry.npmjs.org/debug/-/debug-0.7.4.tgz#06e1ea8082c2cb14e39806e22e2f6f757f92af39"
 
@@ -1880,11 +1884,11 @@ koa-json@^2.0.2:
     koa-is-json "1"
     streaming-json-stringify "3"
 
-koa-log4@^2.2.1:
-  version "2.2.1"
-  resolved "https://registry.npmjs.org/koa-log4/-/koa-log4-2.2.1.tgz#7be52fc23ef8137fec4be7ee7c9a9bdf7e898f73"
+koa-log4@1.1.0:
+  version "1.1.0"
+  resolved "https://registry.npmjs.org/koa-log4/-/koa-log4-1.1.0.tgz#d1494daee73aa3762050482f20fbe308bd74390d"
   dependencies:
-    log4js "^0.6.35"
+    log4js "^1.0.1"
 
 koa-logger@^1.3.0:
   version "1.3.1"
@@ -2166,12 +2170,13 @@ lodash@^4.11.1, lodash@^4.14.0, lodash@^4.17.4, lodash@^4.5.1:
   version "4.17.4"
   resolved "https://registry.npmjs.org/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
-log4js@^0.6.35:
-  version "0.6.38"
-  resolved "https://registry.npmjs.org/log4js/-/log4js-0.6.38.tgz#2c494116695d6fb25480943d3fc872e662a522fd"
+log4js@^1.0.1:
+  version "1.1.1"
+  resolved "https://registry.npmjs.org/log4js/-/log4js-1.1.1.tgz#c21d29c7604089e4f255833e7f94b3461de1ff43"
   dependencies:
-    readable-stream "~1.0.2"
-    semver "~4.3.3"
+    debug "^2.2.0"
+    semver "^5.3.0"
+    streamroller "^0.4.0"
 
 longest@^1.0.1:
   version "1.0.1"
@@ -2988,9 +2993,9 @@ readable-stream@2, readable-stream@2.2.7, readable-stream@^2.0.0, readable-strea
     string_decoder "~1.0.0"
     util-deprecate "~1.0.1"
 
-readable-stream@~1.0.2:
-  version "1.0.34"
-  resolved "https://registry.npmjs.org/readable-stream/-/readable-stream-1.0.34.tgz#125820e34bc842d2f2aaafafe4c2916ee32c157c"
+readable-stream@^1.1.7:
+  version "1.1.14"
+  resolved "https://registry.npmjs.org/readable-stream/-/readable-stream-1.1.14.tgz#7cf4c54ef648e3813084c636dd2079e166c081d9"
   dependencies:
     core-util-is "~1.0.0"
     inherits "~2.0.1"
@@ -3203,10 +3208,6 @@ semver-diff@^2.0.0:
 "semver@2 || 3 || 4 || 5", semver@^5.0.3, semver@^5.1.0, semver@^5.3.0:
   version "5.3.0"
   resolved "https://registry.npmjs.org/semver/-/semver-5.3.0.tgz#9b2ce5d3de02d17c6012ad326aa6b4d0cf54f94f"
-
-semver@~4.3.3:
-  version "4.3.6"
-  resolved "https://registry.npmjs.org/semver/-/semver-4.3.6.tgz#300bc6e0e86374f7ba61068b5b1ecd57fc6532da"
 
 send@0.14.1:
   version "0.14.1"
@@ -3475,6 +3476,15 @@ streaming-json-stringify@3:
   dependencies:
     json-stringify-safe "5"
     readable-stream "2"
+
+streamroller@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.npmjs.org/streamroller/-/streamroller-0.4.0.tgz#a273f1f91994549a2ddd112ccaa2d1dd23cb758c"
+  dependencies:
+    date-format "^0.0.0"
+    debug "^0.7.2"
+    mkdirp "^0.5.1"
+    readable-stream "^1.1.7"
 
 string-length@^1.0.0:
   version "1.0.1"

@@ -23,7 +23,7 @@ export default {
             }
         })
         const DB = { mongoose, ...database.init({ debug }) }
-        return DB
+        return {}||DB
         //end 初始化数据库
     },
     APP_CACHE({ debug }) {

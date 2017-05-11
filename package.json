@@ -2,6 +2,7 @@
     "name": "koa2Base-platform",
     "version": "1.0.0",
     "scripts": {
+        "start:build": "npm run tsc && node build",
         "clean": "rimraf node_modules",
         "clear": "rimraf build",
         "start": "better-npm-run dev",

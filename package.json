@@ -1,5 +1,5 @@
 {
-    "name": "koa2Base-platform",
+    "name": "koa2-base",
     "version": "1.0.0",
     "scripts": {
         "start:build": "npm run tsc && node build",
@@ -10,7 +10,7 @@
         "pstart": "concurrently \"npm run start\" \"npm run open\"",
         "open": "opn \"http://localhost:6666\"",
         "koa": "node ./run",
-        "pm2": "better-npm-run pm2",
+        "pm2": "npm run tsc && pm2 start ./src/common/configs/pm2/pm2.json",
         "tree:dir": "treee -l 2 --ignore node_modules/,.git/",
         "tsc": "npm run clear && tsc",
         "tsc:w": "npm run clear && tsc -w",
@@ -35,10 +35,9 @@
         "prod": {
             "command": "npm run tsc && nodemon  --config ./src/common/configs/nodemon.json",
             "env": {
-                "node_env": "production"
+                "NODE_ENV": "production"
             }
-        },
-        "pm2": "npm run tsc && pm2 start ./src/common/configs/pm2/pm2.json"
+        }
     },
     "dependencies": {
         "bluebird": "^3.4.6",

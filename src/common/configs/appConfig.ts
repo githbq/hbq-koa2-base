@@ -9,6 +9,6 @@ export default {
     uploadStaticPrefix: 'attachment',
     port: 6666,
     secret: 'koa2Base',
-    projectName: 'koa2BasePlatform',
+    projectName: 'koa2Base',
     rootPath: process.cwd()
 }

@@ -1,4 +1,4 @@
-# koa2Base-platform    运营系统后台
+# koa2Base后台
  
 ## 环境安装 
 ## 初始化操作

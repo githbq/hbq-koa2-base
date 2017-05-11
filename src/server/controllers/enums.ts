@@ -1,7 +1,6 @@
 /**
  * 枚举接口
  */
-import activity from './activity'
 const { momentHelper } = appUtils.requireCommon();
 export default ({ debug, logger }) => {
 

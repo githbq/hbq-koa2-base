@@ -9,7 +9,7 @@
         "prod": "better-npm-run prod",
         "pstart": "concurrently \"npm run start\" \"npm run open\"",
         "open": "opn \"http://localhost:6666\"",
-        "koa": "node ./run",
+        "koa": "node run",
         "pm2": "npm run tsc && pm2 start ./src/common/configs/pm2/pm2.json",
         "tree:dir": "treee -l 2 --ignore node_modules/,.git/",
         "tsc": "npm run clear && tsc",

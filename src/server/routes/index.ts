@@ -13,10 +13,29 @@ export default {
                 //如果是以函数形式定义 route  
                 route = koaRouter()
                 //如果里面没有retur route 则直接使用引用传递的这个route
-                const controller = appUtils.requireController(n.fullname)
-                n.result(route, { logger, debug, controller: controller ? controller({ logger, debug }) : undefined })
+                const controller = appUtils.requireController(n.fullname) || function () { return { __auto: true } }
+                const actions = this.wrapController(controller({ logger, debug }), n.fullname)
+                n.result(route, { logger, debug, controller: actions })
             }
             return { route, name: n.fullname }
         })
+    },
+    //对controller返回的对象进行包装
+    wrapController(controllerActions: any = {}, routeName) {
+        controllerActions.bindAction = function (action, getParams) {
+            return async function (ctx, next) {
+                if (controllerActions[action]) {
+                    const result = await controllerActions[action].apply(null, getParams ? [].concat(getParams(ctx)) : [])
+                    if (result === true) {//说明需要调用　next
+                        await next()
+                    } else {
+                        ctx.body = result
+                    }
+                } else {
+                    ctx.body = `未匹配到对应处理方法 @controller:${routeName} @action:${action}`
+                }
+            }
+        }
+        return controllerActions
     }
 }

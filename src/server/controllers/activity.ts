@@ -74,7 +74,7 @@ export default ({ debug, logger }) => {
                 /**
                  * 推广结束时间  时间戳 new Date(date).getTime() 
                  */
-                effactEndTime: new Date().getTime(), 
+                effactEndTime: new Date().getTime(),
                 /**
                  *  推广结束 时间格式化字符串 'YYYY-MM-DD HH:mm:ss'
                  */
@@ -82,7 +82,7 @@ export default ({ debug, logger }) => {
                 /**
                  * 允许调起
                  */
-                awake:true,
+                awake: true,
                 share: {
                     coverSrc: 'http://i3.mifile.cn/a4/xmad_14890540335855_wTxbY.jpg',
                     title: 'xiaomi',

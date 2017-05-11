@@ -761,6 +761,12 @@ debug@2.6.0:
   dependencies:
     ms "0.7.2"
 
+debug@^2.6.6:
+  version "2.6.6"
+  resolved "https://registry.npmjs.org/debug/-/debug-2.6.6.tgz#a9fa6fbe9ca43cf1e79f73b75c0189cbb7d6db5a"
+  dependencies:
+    ms "0.7.3"
+
 decamelize@^1.0.0, decamelize@^1.1.1, decamelize@^1.1.2:
   version "1.2.0"
   resolved "https://registry.npmjs.org/decamelize/-/decamelize-1.2.0.tgz#f6534d15148269b20352e7bee26f501f9a191290"
@@ -1523,20 +1529,17 @@ io-helper@^0.0.5:
     promise-path "^1.2.3"
     readline-promise "^0.0.1"
 
-io-helper@^0.0.8:
-  version "0.0.8"
-  resolved "https://registry.npmjs.org/io-helper/-/io-helper-0.0.8.tgz#0dbdb715c66df5d4a6a6423e80a0456831f08f5d"
+io-helper@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.npmjs.org/io-helper/-/io-helper-1.0.1.tgz#2b3f1f504ba4bce1de6e07bb32f00fd6194e49cd"
   dependencies:
     bluebird "^3.5.0"
+    debug "^2.6.6"
     file-system "^2.2.2"
     fs-extra-promise "^1.0.1"
-    json-stringify-pretty-compact "^1.0.3"
     lodash "^4.17.4"
-    mkdirp "^0.5.1"
-    mkdirp-promise "^5.0.1"
-    node-dir "^0.1.16"
-    promise-path "^1.2.3"
     readline-promise "^0.0.1"
+    tslib "^1.6.1"
 
 is-arrayish@^0.2.1:
   version "0.2.1"

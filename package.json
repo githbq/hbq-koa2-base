@@ -1,9 +1,9 @@
 {
-    "name": "koa2-base",
-    "version": "2.1.0",
-    "description": "基于koa2 typescript搭建的一套完整架构",
+    "name": "koa2Base-platform",
+    "version": "1.0.0",
     "scripts": {
         "clean": "rimraf node_modules",
+        "clear": "rimraf build",
         "start": "better-npm-run dev",
         "prod": "better-npm-run prod",
         "pstart": "concurrently \"npm run start\" \"npm run open\"",
@@ -11,8 +11,8 @@
         "koa": "node ./run",
         "pm2": "better-npm-run pm2",
         "tree:dir": "treee -l 2 --ignore node_modules/,.git/",
-        "tsc": "tsc",
-        "tsc:w": "tsc -w",
+        "tsc": "npm run clear && tsc",
+        "tsc:w": "npm run clear && tsc -w",
         "test": "mocha src/**/*.test.ts"
     },
     "betterScripts": {
@@ -45,7 +45,7 @@
         "debug": "^2.6.3",
         "ejs": "^2.5.6",
         "epipebomb": "^1.0.0",
-        "io-helper": "^0.0.8",
+        "io-helper": "^1.0.1",
         "koa": "^2.2.0",
         "koa-better-body": "^3.0.2",
         "koa-bodyparser": "^4.2.0",
@@ -101,8 +101,7 @@
         "mocha",
         "chai"
     ],
-    "main": "build/app.js",
-    "repository": "git@github.com:githbq/hbq-koa2-base.git",
+    "repository": "https://github.com/githbq/hbq-koa2-base.git",
     "author": "hubiqing",
     "license": "MIT"
 }

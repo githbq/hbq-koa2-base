@@ -1,7 +1,7 @@
 export default {
     appenders: [{
             category: 'log_date',
-            type: 'dateFile',
+            type: 'datefile',
             filename: './temp/logs/log_date/log_date',
             alwaysIncludePattern: true,
             pattern: '-yyyy-MM-dd.log'

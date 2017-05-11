@@ -11,9 +11,6 @@ export default {
             this.log(`appUtils: path:${path}`, e)
         }
     },
-    requireLib(name) {
-        return this.require(COMMON_PATH, 'libs', name)
-    },
     requireController(...paths) {
         const controllerPathArr = [__dirname, 'controllers'];
         //如果没有传参数
@@ -22,6 +19,12 @@ export default {
             return requireHelper.requireDirKV(controllerPathArr)
         }
         return this.require(...controllerPathArr, ...paths)
+    },
+    /**
+     * 获取攻举定义
+     */
+    getEnums() {
+        return this.require(__dirname, 'enums')
     },
     requireCommon(...paths) {
         //如果没有传参数

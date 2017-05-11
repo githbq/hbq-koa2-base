@@ -1,49 +1,61 @@
-# 完全采用typescript重构,是时候扔掉babel了 let's go to typescript 
+# koa2Base-platform    运营系统后台
  
 ## 环境安装 
 ## 初始化操作
 ```
-yarn 
-``` 
+yarn
+或者
+npm i  
+```
+
+ 
 ## 启动方式
 
 ### 最简单启动方式 
-``` 
-npm start 
 ```
-支持pm2部署 
+最常用的集成nodemon的方式,代码变动会自动重载(其实就是nodemon去执行bin/run)
+npm start
+或者
+node bin/run
+```
+支持pm2部署
+
 ```
  npm run pm2 
 ``` 
 ## 目录结构
 
 ```  
-├── build 
+├── bin
+|  ├── run
+|  └── www
+├── common
+|  ├── configs
+|  ├── ioHelper.js
+|  ├── libs
+|  ├── momentHelper.js
+|  ├── npmHelper.js
+|  ├── pm2Helper.js
+|  ├── requireHelper.js
+|  └── spawnHelper.js
 ├── doc
 |  └── 如何使用.txt
-├── package.json
 ├── public
 |  └── favicon.ico
-├── README.md
-├── run.js
-├── src
-|  ├── app.ts
-|  ├── common
-|  ├── globals.d.ts
-|  ├── index.test.ts
-|  ├── index.ts
-|  └── server
-├── temp
-|  └── logs
-├── test
-|  ├── mocha.opts
-|  └── readme.md
-├── tsconfig.json
-├── tslint.json
+├── server
+|  ├── appUtils.js
+|  ├── database
+|  ├── index.js
+|  ├── inits
+|  ├── middlewares
+|  ├── routes
+|  ├── sockets
+|  ├── test
+|  └── views
 ├── upload
-├── views
-|  ├── ejs
-|  └── pug
+├── app.js
+├── package.json
+├── README.md
 └── yarn.lock
 ```
  

@@ -12,16 +12,13 @@
         "noEmitHelpers": true,
         "importHelpers": true,
         "strictNullChecks": false,
-        "lib": [
-            "es6"
-        ],
-        "typeRoots": [
-            "node_modules/@types"
-        ],
+        "lib": ["es6"],
+        "typeRoots": ["node_modules/@types"],
         "types": [
             "node",
-            "chai",
-            "mocha"
+            "mocha",
+            "should",
+            "lodash"
         ],
         "outDir": "./build",
         "rootDir": "./src"

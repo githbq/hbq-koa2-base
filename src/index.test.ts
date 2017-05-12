@@ -1,11 +1,11 @@
-import { expect } from 'chai';
 import { add } from './index'
+import 'should'
 /**
  * 同步测试
  */
 describe('test add', () => {
     it('1 + 1 should be equal to 2', () => {
-        expect(add(1, 1)).to.equal(2);
+        add(1, 1).should.eql(2);
     })
 })
 
@@ -15,7 +15,7 @@ describe('test add', () => {
 describe('test async add', () => {
     it('2 + 2 should be equal to 4', (done) => {
         setTimeout(() => {
-            expect(add(2, 2)).to.equal(4);
+            add(2, 2).should.eql(4);
             done()
         }, 2000)
     })

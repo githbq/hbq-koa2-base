@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 import globalIniter from './server/inits/global'
 import * as http from 'http'
 import * as deb from 'debug'

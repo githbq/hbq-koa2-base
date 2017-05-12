@@ -1,6 +1,6 @@
 {
     "name": "koa2-base",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "scripts": {
         "start:build": "npm run tsc && node build",
         "clean": "rimraf node_modules",
@@ -100,6 +100,7 @@
         "mocha",
         "chai"
     ],
+    "engines": {"node": ">=7.6"},
     "repository": "https://github.com/githbq/hbq-koa2-base.git",
     "author": "hubiqing",
     "license": "MIT"

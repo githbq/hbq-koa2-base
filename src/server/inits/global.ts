@@ -31,15 +31,15 @@ export default {
                 return { status, data, message }
             },
             //全局工具方法
-            appUtils
+            appUtils,
+            //common目录路径
+            COMMON_PATH: pathTool.join(__dirname, '../../common')
         })
-        //进一步的配置
+        //APP_CONFIG 配置
         Object.assign(
             global, {
                 //全局程序配置文件路径 会根据CONFIG_MODE变化
-                APP_CONFIG: require(pathTool.join(__dirname, '../../common/configs', `appConfig${CONFIG_MODE ? `-${CONFIG_MODE}` : ''}`)).default,
-                //common目录路径
-                COMMON_PATH: pathTool.join(__dirname, '../../common'),
+                APP_CONFIG: require(pathTool.join(COMMON_PATH, 'configs', `appConfig${CONFIG_MODE ? `-${CONFIG_MODE}` : ''}`)).default,
             }
         )
         //其他初始化任务
@@ -47,22 +47,4 @@ export default {
             tasks.run({ debug })
         )
     }
-}
-
-
-
-declare module NodeJS {
-    interface Global {
-        appUtils: any,
-        LOGGER: any,
-        APP_CONFIG: any,
-        DB: any,
-        _: any,
-        ROOT_PATH: any,
-        NODE_ENV: any,
-        CONFIG_MODE: any,
-        Q: any,
-        COMMON_PATH: any,
-        JSONResponse: any
-    }
-}
+} 

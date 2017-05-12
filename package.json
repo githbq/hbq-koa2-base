@@ -1,6 +1,6 @@
 {
     "name": "koa2-base",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "scripts": {
         "start:build": "npm run tsc && node build",
         "clean": "rimraf node_modules",
@@ -34,9 +34,7 @@
         },
         "prod": {
             "command": "npm run tsc && nodemon  --config ./src/common/configs/nodemon.json",
-            "env": {
-                "NODE_ENV": "production"
-            }
+            "env": {"NODE_ENV": "production"}
         }
     },
     "dependencies": {
@@ -45,7 +43,7 @@
         "debug": "^2.6.3",
         "ejs": "^2.5.6",
         "epipebomb": "^1.0.0",
-        "io-helper": "^1.0.1",
+        "io-helper": "^1.0.3",
         "koa": "^2.2.0",
         "koa-better-body": "^3.0.2",
         "koa-bodyparser": "^4.2.0",
@@ -72,7 +70,7 @@
         "nodemon": "^1.11.0",
         "pug": "^2.0.0-rc.1",
         "q": "^1.5.0",
-        "require-helper": "^0.0.9",
+        "require-helper": "^0.0.16",
         "superagent": "^3.5.2",
         "superagent-promise": "^1.1.0"
     },

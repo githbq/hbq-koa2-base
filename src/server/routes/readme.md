@@ -14,7 +14,7 @@ export default (route, { controller }) => {
 ```
 # koa-router获取参数 
 
-## 使用 ctx.request.body或者 ctx.request.fields取得post表单参数 
+## 使用 ctx.request.fields或者 ctx.request.body 取得post表单参数 
 ## 使用 ctx.query取得路径查询参数    url:  /a/b?x=1&y=2
 ## 使用 ctx.params取得路径参数       url:'/employee/:pageSize/:pageIndex'
 

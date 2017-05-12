@@ -1,6 +1,6 @@
-import modelBase from './models/_base'
+import modelBase from './base'
 import * as mongoose from 'mongoose'
-import getCommonProps from './models/_commonProps'
+import getCommonProps from './commonProps'
 
 const Schema = mongoose.Schema
 //自动加载 无需人工引入文件  

@@ -21,11 +21,17 @@ export default {
         })
     },
     //对controller返回的对象进行包装
-    wrapController(controllerActions: any = {}, routeName) {
-        controllerActions.bindAction = function (action, getParams) {
+    wrapController(controllerActions: any = {}, routeName: string) {
+        controllerActions.bindAction = function (action: string, getParams?: Function) {
+            /**
+             * 如果调用bindAction时不传第二个函数参数
+             */
+            getParams = getParams || function (ctx) {
+                return [ctx.params, ctx.query, ctx.request.fields]
+            }
             return async function (ctx, next) {
                 if (controllerActions[action]) {
-                    const result = await controllerActions[action].apply(null, getParams ? [].concat(getParams(ctx)) : [])
+                    const result = await controllerActions[action].apply(null, [].concat(getParams(ctx)))
                     if (result === true) {//说明需要调用　next
                         await next()
                     } else {

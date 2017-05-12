@@ -3,28 +3,18 @@
 ``` javascript 
 //route
 export default (route, { controller }) => {
-    route.post('/', controller.bindAction('add', (ctx) => {
-        return [ctx.request.fields]
-    }))
-    route.delete('/:_id', controller.bindAction('delete', (ctx) => {
-        return [ctx.params]
-    }))
-    route.put('/:_id', controller.bindAction('update', (ctx) => {
-        return [ctx.params, ctx.request.fields]
-    }))
-    route.get('/page/:pageSize/:pageIndex', controller.bindAction('getPage', (ctx) => {
-        return [ctx.params, ctx.query]
-    }))
-    route.get('/:_id', controller.bindAction('getById', (ctx) => {
-        return [ctx.params, ctx.query]
-    }))
+    route.post('/', controller.bindAction('add'))
+    route.delete('/:_id', controller.bindAction('delete'))
+    route.put('/:_id', controller.bindAction('update'))
+    route.get('/page/:pageSize/:pageIndex', controller.bindAction('getPage'))
+    route.get('/:_id', controller.bindAction('getById'))
 } 
 //controller 
 const { momentHelper } = appUtils.requireCommon();
 export default ({ debug, logger }) => {
-    const model = DB.models.activity
+    const model = DB.models.demo
     return {
-        async add(fields) {
+        async add(params, query, fields) {
             const result = await model._add(fields)
             return JSONResponse(1, result)
         },
@@ -32,7 +22,7 @@ export default ({ debug, logger }) => {
             const result = await model._delete({ condition: params })
             return JSONResponse(1, result)
         },
-        async update(params, fields) {
+        async update(params, query, fields) {
             const result = await model._update(params, fields)
             return JSONResponse(1, result)
         },
@@ -43,7 +33,7 @@ export default ({ debug, logger }) => {
         async getById({ _id }) {
             const result = await model._findById(_id)
             return JSONResponse(1, result)
-        } 
+        }
     }
 }
 ```

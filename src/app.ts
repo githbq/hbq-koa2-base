@@ -3,7 +3,7 @@ import server from './server'
 //加载中间件
 const loadMiddleware = (name, ...args) => {
     const middleware = require('./server/middlewares/' + name).default
-    return middleware.apply(null, args) || async function () { }
+    return (middleware && middleware.apply(null, args)) || async function (ctx, next) { await next() }
 }
 export default {
     init({ debug, logger }: any) {
@@ -13,7 +13,7 @@ export default {
         //ctx.cookies.set('name', 'tobi', { signed: true });
         app.keys = [APP_CONFIG.secret || "secret key string"]
         const middlewares = [
-            'timeLogger', //请求消耗时间统计logger
+            'logger', //记录所用方式与时间 
             'globalError', // 全局错误处理
             'error', // 使用自定义错误
             'send', //send
@@ -22,7 +22,6 @@ export default {
             'etag', //etag 客户端缓存处理
             'bodyParser', //body解析
             'json', // 传输JSON
-            'logger', //记录所用方式与时间 
             'views', //模板文件
             'session', //session处理
             ['static', APP_CONFIG.staticPath], // 静态文件夹

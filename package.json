@@ -1,6 +1,6 @@
 {
     "name": "koa2-base",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "scripts": {
         "start:build": "npm run tsc && node build",
         "clean": "rimraf node_modules",

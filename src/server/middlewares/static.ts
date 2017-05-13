@@ -4,12 +4,13 @@ export default (path, prefix, options) => {
     return convert(
         koaStatic(
             path,
-            Object.assign({
+            {
                 prefix: prefix ? prefix : '',
                 maxAge: 365 * 24 * 60 * 60,
                 dynamic: true,
-                gzip: true
-            }, options)
+                gzip: true,
+                ...options
+            }
         )
     )
 }

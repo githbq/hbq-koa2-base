@@ -27,6 +27,7 @@ export default {
              * 如果调用bindAction时不传第二个函数参数
              */
             getParams = getParams || function (ctx) {
+                ctx.request.body = ctx.request.body || {}
                 return [ctx.params, ctx.query, ctx.request.body.fields]
             }
             return async function (ctx, next) {

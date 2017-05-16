@@ -15,10 +15,12 @@
         "lib": ["es6"],
         "typeRoots": ["node_modules/@types"],
         "types": [
-            "node",
+            "bluebird",
+            "bluebird-global",
+            "lodash",
             "mocha",
-            "should",
-            "lodash"
+            "node",
+            "should"
         ],
         "outDir": "./build",
         "rootDir": "./src"

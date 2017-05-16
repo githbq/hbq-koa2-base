@@ -5,16 +5,16 @@ export default {
     require(...paths) {
         const path = pathTool.join.apply(null, paths)
         try {
-            const result = require(path);
+            const result = require(path)
             return (result && result.default) ? result.default : result
         } catch (e) {
             this.log(`appUtils: path:${path}`, e)
         }
     },
     requireController(...paths) {
-        const controllerPathArr = [__dirname, 'controllers'];
+        const controllerPathArr = [__dirname, 'controllers']
         //如果没有传参数
-        if (paths.length == 0) {
+        if (paths.length === 0) {
 
             return requireHelper.requireDirKV(controllerPathArr)
         }
@@ -28,7 +28,7 @@ export default {
     },
     requireCommon(...paths) {
         //如果没有传参数
-        if (paths.length == 0) {
+        if (paths.length === 0) {
             return requireHelper.requireDirKV(COMMON_PATH)
         }
         const result = this.require(COMMON_PATH, ...paths)

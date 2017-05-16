@@ -3,10 +3,10 @@ import * as superagentPromise from 'superagent-promise'
 let agent = superagentPromise(superagent, global.Promise)
 //创建代理路由 
 export let createAgentRoute = (router, action, routeUrl, remoteUrl, callback) => {
-    router[action](routeUrl, async(ctx, next) => {
+    router[action](routeUrl, async (ctx, next) => {
         try {
             let result
-            if (action == 'post') {
+            if (action === 'post') {
                 result = await agent.post(remoteUrl)
                     .type('form')
                     .send(ctx.request.fields.data)

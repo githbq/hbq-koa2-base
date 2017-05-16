@@ -25,10 +25,10 @@
                  return data.then((result) => { return result ? result.title : '' })
              },
              add() {
-                 var x = this.update({}, { name: 'hanmeimei' }, { multi: true }, () => {
+                 let x = this.update({}, { name: 'hanmeimei' }, { multi: true }, () => {
                      console.log('update')
                  })
-                 var model = new this({ name: Math.random() + 'lili' })
+                 let model = new this({ name: Math.random() + 'lili' })
                  return model.save()
              },
              getBlogById(id) {

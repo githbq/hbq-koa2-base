@@ -1,5 +1,5 @@
 import * as favicon from 'koa-favicon'
-import * as convert from 'koa-convert'
+import * as pathTool from 'path'
 export default () => {
-    return convert(favicon('../../public/favicon.ico'))
+    return favicon(pathTool.join(ROOT_PATH, 'public', 'favicon.ico'))
 }

@@ -1,5 +1,5 @@
 class KoaErr extends Error {
-    public status: Number;
+    public status: Number
     constructor({ message = 'Error', status = 500 } = {}, ...args) {
         super()
         this.message = message

@@ -1,10 +1,10 @@
 /** 
  * mogoose model 通用静态方法 ,子model会自动继承
- */ 
-import * as mongoModelStatics from 'mongo-model-statics' 
+ */
+import mongoModelStatics from 'mongo-model-statics'
 export default {
-    ...mongoModelStatics, 
-    //   keyWord: '$',
+    ...mongoModelStatics,
+    // keyWord: '$',
     // /**
     //  * 查询条件处理
     //  * @param {条件对象} condition 
@@ -17,16 +17,16 @@ export default {
     //         return new RegExp(regStr, 'i')
     //     }
     //     keys.forEach((n) => {
-    //         const startWith = _.startsWith(n, this.keyWord)
-    //         const endWith = _.endsWith(n, this.keyWord)
+    //         const startWith = n.startsWith(n, this.keyWord)
+    //         const endWith = n.endsWith(n, this.keyWord)
     //         const value = condition[n]
-    //             //实际的key
+    //         //实际的key
     //         let newKey
-    //             //正则串
+    //         //正则串
     //         let regStr
-    //             //正则对象
+    //         //正则对象
     //         let reg
-    //             //key 匹配  $xxx$ 作包含判断
+    //         //key 匹配  $xxx$ 作包含判断
     //         if (startWith && endWith) {
     //             regStr = escapeStringRegexp(value)
     //             reg = getReg(`${regStr}`)
@@ -99,7 +99,7 @@ export default {
     //     }
     //     countPromise = countPromise.exec()
     //     pagePromise = pagePromise.exec()
-    //     return Q.all([countPromise, pagePromise]).spread((count, page) => { //两函数返回的两个值
+    //     return Promise.all([countPromise, pagePromise]).then(([count, page]) => { //两函数返回的两个值
     //         return { total: count, list: page, pageIndex: param.pageIndex, pageSize: param.pageSize }
     //     })
     // },
@@ -112,7 +112,6 @@ export default {
     //     return this.findOne(param.condition).exec()
     // },
     // _findById(id) {
-    //     param = this._paramPreprocess(param)
     //     return this.findById(id).exec()
     // },
     // _delete(param) {
@@ -120,26 +119,18 @@ export default {
     //     return this.remove(param.condition).exec()
     // },
     // _add(data) {
-    //     data.createTime = (new Date()).getTime()
-    //     data.updateTime = (new Date()).getTime()
-    //     data.createTimeString = momentHelper.get(data.createTime)
-    //     data.updateTimeString = momentHelper.get(data.updateTime)
     //     let model = new this(data)
     //     return model.save()
     // },
     // _update(condition, updateData, option) {
-    //     let deferred = Q.defer()
-    //     delete updateData.createTime
-    //     delete updateData.createTimeString
-    //     updateData.updateTime = (new Date()).getTime()
-    //     updateData.updateTimeString = momentHelper.get(updateData.updateTime)
-    //     this.update(condition, updateData, option || { multi: true }, (err, data) => {
-    //         if (err) {
-    //             deferred.reject(err)
-    //         } else {
-    //             deferred.resolve(data)
-    //         }
+    //     return new Promise((resolve, reject) => {
+    //         this.update(condition, updateData, option || { multi: true }, (err, data) => {
+    //             if (err) {
+    //                 reject(err)
+    //             } else {
+    //                 resolve(data)
+    //             }
+    //         })
     //     })
-    //     return deferred.promise
     // }
 }

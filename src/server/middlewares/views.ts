@@ -3,7 +3,7 @@ export default () => {
     return views(APP_CONFIG.viewPath, {
         map: {
             pug: 'pug',
-            html:'ejs'
+            html: 'ejs'
         }
     })
     //支持多种模板

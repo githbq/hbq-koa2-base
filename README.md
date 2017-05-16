@@ -2,14 +2,14 @@
 
 ## 一个完整的 koa2 typescript 开发框架   
 
-## 使用方式    
+## 使用方式         
 
 ```
 npm i -g iclone-cli //脚手架 会清除远程git信息 自动装库
 iclone init -t koa -n [自定义项目名称] //在当前目录以项目名称创建新项目
 或者 直接克隆
 git clone https://github.com/githbq/hbq-koa2-base.git   
-```   
+```
 
 ## 环境要求             
 - nodejs > 7.6      

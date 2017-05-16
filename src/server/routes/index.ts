@@ -31,7 +31,8 @@ export default {
             }
             return async function (ctx, next) {
                 if (controllerActions[action]) {
-                    const result = await controllerActions[action].apply(ctx, [].concat(getParams(ctx)))
+                    const params = await getParams(ctx)
+                    const result = await controllerActions[action].apply(ctx, [].concat(params))
                     if (result === true) {//说明需要调用　next
                         await next()
                     } else {

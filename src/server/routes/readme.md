@@ -41,7 +41,7 @@ export default ({ debug, logger }) => {
 ## koa-router获取参数 
 
 ### 使用 ctx.request.body.fields 取得post表单参数 对象
-### 使用 ctx.request.body.files 取得上传的文件 数组
+### 使用 ctx.request.body.files 取得上传的文件 值为 {[fieldName:File||File:[]}
 ### 使用 ctx.query取得路径查询参数    url:  /a/b?x=1&y=2
 ### 使用 ctx.params取得路径参数       url:'/employee/:pageSize/:pageIndex'
 

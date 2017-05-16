@@ -1,7 +1,9 @@
 # koa2-base typescript+koa2框架 
 ## 一个完整的 koa2 typescript 开发框架   
-## 使用方式:        
-> git clone https://github.com/githbq/hbq-koa2-base.git      
+## 使用方式      
+```
+git clone https://github.com/githbq/hbq-koa2-base.git   
+```   
 
 ## 环境要求             
 - nodejs > 7.6      

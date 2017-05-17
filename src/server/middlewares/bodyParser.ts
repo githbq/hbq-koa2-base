@@ -18,6 +18,7 @@ export default () => {
                     //空文件 在下次事件轮询时删除
                     if (!file.size) {
                         file.name = 'emptyfile'
+                        file.disable = true
                         setImmediate(() => {
                             rimraf(ioHelper.pathTool.join(APP_CONFIG.uploadPath, '**/*emptyfile*'), (err) => { })
                         })

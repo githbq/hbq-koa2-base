@@ -5,11 +5,12 @@
      "args": ["run-script"],
      "showOutput": "always",
      "tasks": [{
-             "taskName": "tsc:w"
+             "taskName": "tsc:w",
+             "isBuildCommand": true
          },
          {
-             "taskName": "tsc",
-             "isBuildCommand": true
+             "taskName": "tsc"
+
          }
      ]
  }

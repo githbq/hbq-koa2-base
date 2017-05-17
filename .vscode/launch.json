@@ -4,14 +4,24 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [{
-        "type": "node",
-        "request": "launch",
-        "protocol": "inspector",
-        "name": "启动程序",
-        "program": "${workspaceRoot}/src/index.ts",
-        "cwd": "${workspaceRoot}",
-        "outFiles": ["${workspaceRoot}/build/**/*.js"],
-        "sourceMaps": true,
-        "preLaunchTask": "tsc"
-    }]
+            "type": "node",
+            "request": "launch",
+            "protocol": "inspector",
+            "name": "启动程序",
+            "program": "${workspaceRoot}/build/index.js",
+            "cwd": "${workspaceRoot}"
+        }
+        //下面这种方式调试需要先编译 会比较慢,优点是不需要 `ctrl+shift+b` 监听编译ts
+        // , {
+        //     "type": "node",
+        //     "request": "launch",
+        //     "protocol": "inspector",
+        //     "name": "启动程序",
+        //     "program": "${workspaceRoot}/src/index.ts",
+        //     "cwd": "${workspaceRoot}",
+        //     "outFiles": ["${workspaceRoot}/build/**/*.js"],
+        //     "sourceMaps": true,
+        //     "preLaunchTask": "tsc"
+        // }
+    ]
 }

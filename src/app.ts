@@ -28,7 +28,10 @@ export default {
         ]
         for (let n of middlewares) {
             const middleware = await this.loadMiddleware.apply(null, [].concat(n))
-            app.use(middleware)
+            //考虑返回多个中间件
+            for (let m of [].concat(middleware)) {
+                app.use(m)
+            }
         }
         //其他始始化处理  router,sockets ... 
         await server.init(app, { debug, logger } as any)

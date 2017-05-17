@@ -23,19 +23,18 @@ export default {
             model.props = { ...commonProps, ...model.props }
 
             const modelSchema = new Schema(model.props, model.collection)
-            modelSchema.pre('save', (next) => {
-                this.createTime = (new Date()).getTime()
+            modelSchema.pre('save', function (next) {
+                this.createTime = Date.now()
                 this.updateTime = this.createTime
                 this.createTimeString = momentHelper.get(this.createTime)
-                this.updateTimeString = momentHelper.get(this.updateTime)
+                this.updateTimeString = this.createTimeString
                 next()
             })
-            modelSchema.pre('update', (next) => {
+            modelSchema.pre('update', function (next) {
                 delete this.createTime
                 delete this.createTimeString
-                this.updateTime = (new Date()).getTime()
+                this.updateTime = Date.now()
                 this.updateTimeString = momentHelper.get(this.updateTime)
-                console.log(this)
                 next()
             })
             modelSchema.statics = { ...modelBase, ...model.statics }

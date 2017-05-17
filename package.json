@@ -65,6 +65,7 @@
         "open": "^0.0.5",
         "pug": "^2.0.0-rc.1",
         "require-helper": "^0.0.17",
+        "rimraf": "^2.6.1",
         "superagent": "^3.5.2",
         "superagent-promise": "^1.1.0"
     },
@@ -80,7 +81,6 @@
         "concurrently": "^3.1.0",
         "mocha": "^3.3.0",
         "opn-cli": "^3.1.0",
-        "rimraf": "^2.6.1",
         "should": "11.2.1",
         "supertest": "^1.2.0",
         "tree-cli": "^0.4.12",

@@ -16,7 +16,7 @@ export default () => {
                 multiples: true,
                 onFileBegin: function (fieldName, file) {
                     //空文件 在下次事件轮询时删除
-                    if (!file.size) {
+                    if (!file.name) {
                         file.name = 'emptyfile'
                         file.disable = true
                         setImmediate(() => {

@@ -11,10 +11,10 @@
         "": "node",
         "js": "node --harmony"
     },
-    "exec": "node ./build/index.js",
+    "exec": "node ./run.js",
     "watch": [
-        "build/**/*.js"
+        "src/**/*.ts"
     ],
     "env": {},
-    "ext": "js json"
+    "ext": "ts js json"
 }

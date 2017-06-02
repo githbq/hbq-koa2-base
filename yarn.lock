@@ -2599,17 +2599,17 @@ request@^2.81.0:
     tunnel-agent "^0.6.0"
     uuid "^3.0.0"
 
-require-dir@^0.3.1:
-  version "0.3.1"
-  resolved "https://registry.npmjs.org/require-dir/-/require-dir-0.3.1.tgz#b5a8e28bae0343bb0d0cc38ab1f531e1931b264a"
+require-dir@^0.3.2:
+  version "0.3.2"
+  resolved "https://registry.npmjs.org/require-dir/-/require-dir-0.3.2.tgz#c1d5c75e9fbffde9f2e6b33e383db4f594b5a6a9"
 
-require-helper@^0.0.17:
-  version "0.0.17"
-  resolved "https://registry.npmjs.org/require-helper/-/require-helper-0.0.17.tgz#17c0ff78e9ce5c493d216e00b8b4aa2c559955c3"
+require-helper@^0.0.18:
+  version "0.0.18"
+  resolved "https://registry.npmjs.org/require-helper/-/require-helper-0.0.18.tgz#9259b8b9251e9f9e8385a6020eb42af65cc7eb04"
   dependencies:
     io-helper "^1.0.8"
     lodash "^4.17.4"
-    require-dir "^0.3.1"
+    require-dir "^0.3.2"
 
 require_optional@~1.0.0:
   version "1.0.0"
@@ -2641,7 +2641,7 @@ right-align@^0.1.1:
   dependencies:
     align-text "^0.1.1"
 
-rimraf@2, rimraf@^2.5.1, rimraf@^2.5.4, rimraf@^2.6.1:
+rimraf@2, rimraf@^2.5.1, rimraf@^2.6.1:
   version "2.6.1"
   resolved "https://registry.npmjs.org/rimraf/-/rimraf-2.6.1.tgz#c2338ec643df7a1b7fe5c54fa86f57428a55f33d"
   dependencies:

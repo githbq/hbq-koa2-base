@@ -1,8 +1,8 @@
-// import * as convert from 'koa-convert'
-// import log4js from './log4js'
+// Import * as convert from 'koa-convert'
+// Import log4js from './log4js'
 /**
- * http日志
- */
+* Http log
+*/
 export default () => {
     return async (ctx, next) => {
         const start: number = new Date().getTime()
@@ -11,7 +11,7 @@ export default () => {
         appUtils.log(`${ctx.method} ${ctx.url} [${ctx.status}] - ${ms}ms`)
     }
 
-    // if (!appUtils.isDev()) { 
+    // if (!appUtils.isDev()) {
     // return convert(log4js())
     // } else {
     //     return convert(logger())

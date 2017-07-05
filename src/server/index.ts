@@ -1,4 +1,4 @@
-//初始化inits目录里面 文件名以init开头的文件  需要返回一个带有init方法的对象 否则不会进行初始化
+// Initialize the inits directory where the file name starts with init and needs to return an object with the init method otherwise it will not be initialized
 export default {
     async init(app, { debug }) {
         const requireHelper = appUtils.requireCommon('requireHelper')

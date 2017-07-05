@@ -1,44 +1,44 @@
 /** 
- * mogoose model 通用静态方法 ,子model会自动继承
+ * Mogoose model Universal static method, sub model will automatically inherit
  */
 import mongoModelStatics from 'mongo-model-statics'
 export default {
     ...mongoModelStatics,
     // keyWord: '$',
     // /**
-    //  * 查询条件处理
-    //  * @param {条件对象} condition 
+    //  * Query condition processing
+    //  * @param {conditional object} condition
     //  */
     // _conditionProcess(condition) {
     //     const keys = Object.keys(condition)
 
     //     function getReg(regStr) {
-    //         //忽略大小写搜索
+    //         // ignore case search
     //         return new RegExp(regStr, 'i')
     //     }
     //     keys.forEach((n) => {
     //         const startWith = n.startsWith(n, this.keyWord)
     //         const endWith = n.endsWith(n, this.keyWord)
     //         const value = condition[n]
-    //         //实际的key
-    //         let newKey
-    //         //正则串
-    //         let regStr
-    //         //正则对象
-    //         let reg
-    //         //key 匹配  $xxx$ 作包含判断
+    // // the actual key
+    // Let newKey
+    // // regular string
+    // Let regStr
+    // // regular objects
+    // Let reg
+    // // key matches $ xxx $ for containing judgment
     //         if (startWith && endWith) {
     //             regStr = escapeStringRegexp(value)
     //             reg = getReg(`${regStr}`)
     //             newKey = n.substring(1, n.length - 1)
     //         }
-    //         //key 匹配  $xxx  作开头判断
+    //         // key matches $ xxx for the first judgment
     //         else if (startWith) {
     //             regStr = escapeStringRegexp(value)
     //             reg = getReg(`^${regStr}`)
     //             newKey = n.substring(1)
     //         }
-    //         //key 匹配  xxx$ 作结尾判断
+    //         // key matches xxx $ for ending judgment
     //         else if (endWith) {
     //             regStr = escapeStringRegexp(value)
     //             reg = getReg(`${regStr}$`)
@@ -46,21 +46,21 @@ export default {
     //         } else {
     //             newKey = n
     //         }
-    //         delete condition[n] //删除旧的key
+    //         delete condition[n] // delete old key
     //         condition[newKey] = regStr ? reg : value
     //     })
     //     return condition
     // },
     // /**
-    //  * 参数预处理
-    //  * @param {参数} param 
+    //  * Parameter preprocessing
+    //  * @param {parameter} param
     //  */
     // _paramPreprocess(param) {
     //     param = param || {}
     //     if (param) {
     //         param.condition = param.condition || {}
     //     }
-    //     //参数处理
+    //     // parameter handling
     //     param.condition = this._conditionProcess(param.condition)
     //     return param
     // },
@@ -71,17 +71,17 @@ export default {
     //         .exec()
     // },
     // /**
-    //  * 分页方法 最小页标是1  默认页面大小是10
-    //  * @param {*参数} param 
-    //  * @param {*查询数据回调} callback 
-    //  * @param {*查询数据条数回调} countcallback 
+    //  * Paging method the smallest page is 1 The default page size is 10
+    //  * @param {*parameters} param
+    //  * @param {*query data callback} callback
+    //  * @param {*query the number of data callback} countcallback
     //  */
     // _getPage(param, callback, countcallback) {
     //     param = this._paramPreprocess(param)
-    //     param.pageIndex = parseInt(param.pageIndex || 1) //默认页是第1 页
-    //     param.pageIndex = param.pageIndex < 1 ? 1 : param.pageIndex //最小页码是1
+    //     param.pageIndex = parseInt(param.pageIndex || 1) // default page is page 1
+    //     param.pageIndex = param.pageIndex < 1 ? 1 : param.pageIndex // minimum page number is 1
     //     param.pageSize = parseInt(param.pageSize || 10)
-    //     param.pageSize = param.pageSize < 1 ? 1 : param.pageSize //最小大小是1
+    //     param.pageSize = param.pageSize < 1 ? 1 : param.pageSize // minimum size is 1
     //     let pagePromise = this
     //         .find(param.condition)
     //         .sort(param.sortBy || { createTime: -1 })
@@ -99,7 +99,7 @@ export default {
     //     }
     //     countPromise = countPromise.exec()
     //     pagePromise = pagePromise.exec()
-    //     return Promise.all([countPromise, pagePromise]).then(([count, page]) => { //两函数返回的两个值
+    //     return Promise.all([countPromise, pagePromise]).then(([count, page]) => { //  fonction retourne deux valeurs deux
     //         return { total: count, list: page, pageIndex: param.pageIndex, pageSize: param.pageSize }
     //     })
     // },

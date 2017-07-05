@@ -1,4 +1,4 @@
-//自动挂载其他文件并注入io对象
+// Automatically mount other files and inject io objects
 const requireHelper = appUtils.requireCommon('requireHelper')
 export default (io, { debug }) => {
     requireHelper.requireDir(__dirname, (socket) => {

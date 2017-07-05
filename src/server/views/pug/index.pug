@@ -1,6 +1,11 @@
 extends layout
 
 block content
-   p hello world!
+   p hello Koa2 world !
+
+   p Upload File
+   form(method='post', enctype='multipart/form-data')
+      input(type='file', name='imageupload')
+      input(type='submit', name='uploadimage', value='Upload Image')
 block afterScripts
   

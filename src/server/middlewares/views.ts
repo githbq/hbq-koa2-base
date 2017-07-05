@@ -6,14 +6,13 @@ export default () => {
             html: 'ejs'
         }
     })
-    //支持多种模板
+    // Supports multiple templates
     // views(__dirname + '/views-ejs', {
     //     extension: 'ejs'
     // })
 }
 
-
-//example
+// Example
 // app.use(views(__dirname + '/views', {
 //   extension: 'jade'
 // }))

@@ -2,14 +2,14 @@ import globalIniter from './server/inits/global'
 import * as http from 'http'
 import * as deb from 'debug'
 import * as chalk from 'chalk'
-//打开浏览器
+// Open the browser
 import * as open from 'open'
 const debug = deb('server:default')
 import appIniter from './app'
 (async () => {
-    //初始化全局变量
+    // Initialize global variables
     await globalIniter.init({ debug })
-    //初始化koa app
+    // Initialize koa app
     let app
     try {
         app = await appIniter.init({ debug, logger: LOGGER })
@@ -17,7 +17,7 @@ import appIniter from './app'
         console.error(e)
         return
     }
-    //初始化全局变量
+    // Initialize global variables
     const config = APP_CONFIG
     const starter = {
         app,
@@ -29,15 +29,15 @@ import appIniter from './app'
             this.app.on('error', this.onError)
         },
         onError(error) {
-            // if (error.syscall !== 'listen') {
-            //     throw error
+            // If (error.syscall! == 'listen') {
+            // Throw error
             // }
             let bind = 'Port ' + this.port
             switch (error.code) {
                 case 'ECONNRESET':
                 case 'ECANCELED':
                     {
-                        //访问mp3之类静态资源会报错,但是不会影响功能使用 静默掉
+                        // Access to mp3 like static resources will be given, but will not affect the use of quiet function
                     }
                     break
                 case 'EACCES':
@@ -56,21 +56,21 @@ import appIniter from './app'
         },
         onListening() {
             let { port } = this.address()
-            appUtils.log(chalk.blue.bgWhite(`✅ 启动端口 http://127.0.0.1:${port}`))
+            appUtils.log(chalk.blue.bgWhite(`✅ Running http://127.0.0.1:${port}`))
         }
     }
     starter.run()
 
-    //遇到EPIPE错误导致程序崩溃的时候 关闭程序
+    // The program closes when the EPIPE error causes the program to crash
     process.stdout.on('error', function (err) {
         if (err.code === 'EPIPE') {
             process.exit(0)
         }
     })
-    //遇到EPIPE错误 解决方案
+    // Encountered an EPIPE error solution
     require('epipebomb')()
 })()
-/**demo for test */
+/** demo for test */
 export function add(a, b) {
     return a + b
 }

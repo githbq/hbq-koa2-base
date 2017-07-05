@@ -1,7 +1,7 @@
 import * as lodash from 'lodash'
 declare global {
     /**
-     * lodash
-     */
+* Lodash
+*/
     const _: typeof lodash
 }

@@ -1,15 +1,15 @@
 const { ioHelper, momentHelper } = appUtils.requireCommon()
-//文件上传处理 从临时文件 移动到目标文件夹  文件名加时间字符串前缀
+// File upload processing from temporary file to target folder file name plus time string prefix
 export let upload = (options) => {
     let defaultOptions = {
         uploadPath: APP_CONFIG.uploadPath,
-        dest: momentHelper.format(null, 'YYYY-MM-DD'), //目标路径 相对uploadPath  
-        onSave: null //每一个文件保存的时候 事件 
+        dest: momentHelper.format(null, 'YYYY-MM-DD'), // The target path is relative to uploadPath
+        onSave: null // Every file is saved when the event
     }
     options = Object.assign({}, defaultOptions, options)
     return async (ctx, next) => {
-        let parts = ctx.request.files
-        //获取要上传到的文件夹
+        let parts = ctx.request.body.files
+        // Gets the folder to upload to
         let dir = ioHelper.pathTool.isAbsolute(options.dest) ? options.dest : ioHelper.pathTool.join(options.uploadPath, options.dest)
         const exists = await ioHelper.exists(dir)
         if (!exists) {
@@ -17,7 +17,7 @@ export let upload = (options) => {
         }
         while (parts.length) {
             let part = parts.shift()
-            //要放置的文件路径 
+            // The path to the file to be placed
             const destFilePath = ioHelper.pathTool.resolve(dir, `${momentHelper.format(null, 'YYYYMMDDHHmmss-')}` + part.name)
             await ioHelper.moveAsync(part.path, destFilePath)
             options.onSave && options.onSave(destFilePath, ctx)

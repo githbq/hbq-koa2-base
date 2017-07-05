@@ -6,22 +6,22 @@ export default {
     async init(app, { debug }) {
         const io = new IO()
         io.attach(app)
-        //初始化socket缓存
+        // Initialize the socket cache
         await APP_CACHE.setAsync('socket-cache', [])
         io.use(async (ctx, next) => {
             await next()
         })
         io.on('io-test', (context, data) => {
-            //检测成功响应事件
-            context.socket.emit('io-test-response', 'socket.io 成功了')
+            // Detects a successful response event
+            context.socket.emit('io-test-response', 'socket.io was successful')
         })
-        //监听客户端连接  会将连接数据,以及当前连接人 存入缓存
+        // The listening client connection stores the connection data and the current connection person into the cache
         io.on('connection', async (ctx, id) => {
             let clientSocket = ctx.socket
             let socketId = clientSocket.id
             let userId = cookieHelper.get(clientSocket, 'userId')
-            //一个检测事件 
-            //断开连接时 删除对应的缓存数据
+            // A detection event
+            // Disconnect the corresponding cached data when disconnected
             clientSocket.on('disconnect', async () => {
                 let socketCacheData = (await APP_CACHE.getAsync(`socket-cache`)) || []
                 let index = _.findIndex(socketCacheData, { socketId })
@@ -30,13 +30,13 @@ export default {
                 }
                 await APP_CACHE.setAsync('socket-cache', socketCacheData)
             })
-            //将本次连接的 用户id与socketId 存入缓存中
+            // Will be connected to the user id and socketId stored in the cache
             let socketCacheData = await APP_CACHE.getAsync(`socket-cache`)
             socketCacheData = socketCacheData || []
             socketCacheData.push({ socketId, userId })
             APP_CACHE.setAsync('socket-cache', socketCacheData)
         })
-        //挂载具体的事件
+        // Mount specific events
         sockets(io, { debug })
     }
 }

@@ -1,3 +1,3 @@
 export default {
-    status: { '1': '已布发', '0': '未发布', '-1': '已下架' }
+    status: {'1': 'has been issued', '0': 'not released', '-1': 'has been off'}
 }

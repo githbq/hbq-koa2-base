@@ -1,16 +1,16 @@
 /**
- * 案例代码 
- */
+* Case code
+*/
 export default (mongoose, Schema) => {
     return {
-        //定义mongodb的字段
+        // Defines the fields of mongodb
         props: {
             name: {
                 type: Schema.Types.String,
                 required: true
             }
         },
-        //静态方法
+        // Static method
         statics: {
             save() {
                 return this._add({ name: 'lucy' })

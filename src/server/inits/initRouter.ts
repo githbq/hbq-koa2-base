@@ -1,6 +1,6 @@
 import * as koaRouter from 'koa-router'
 import routes from '../routes'
-//根路由
+// Root route
 const route = koaRouter()
 
 export default {
@@ -12,7 +12,7 @@ export default {
                 await ctx.render('pug/404.pug')
             }
         })
-        //默认访问路径
+        // Default access path
         route.get('/', async (ctx, next) => {
             await ctx.render('pug/index.pug')
         })
@@ -20,6 +20,8 @@ export default {
             route.use('/' + routeItem.name, routeItem.route.routes(), routeItem.route.allowedMethods())
         })
         app.use(route.routes(), route.allowedMethods())
-        //end router
+        appUtils.log("App routes:");
+        appUtils.log(route.stack.map(i => i.path));
+        // End router
     }
 }

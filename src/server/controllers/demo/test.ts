@@ -1,6 +1,6 @@
 /**
- * test
- */
+* Test
+*/
 const { momentHelper } = appUtils.requireCommon()
 export default ({ debug, logger }) => {
     const model = DB.models.demo

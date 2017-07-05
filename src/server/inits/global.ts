@@ -1,46 +1,46 @@
 import * as pathTool from 'path'
 import * as Bluebird from 'bluebird'
-//lodash
+// Lodash
 import * as lodash from 'lodash'
-//应用程序工具库
+// Application tool library
 import appUtils from '../appUtils'
-//需要执行的初始化任务 比如数据库 缓存库
+// Need to perform initialization tasks such as database cache
 import tasks from './tasks'
 /**
- * global文件会在应用程序最开始被执行  优先执行
- */
+* The global file is executed at the very beginning of the application
+*/
 export default {
     async init({ debug }) {
-        //向global添加全局对象
+        // Add global objects to global
         Object.assign(global, {
-            //程序根目录
+            // Program root directory
             ROOT_PATH: process.cwd(),
-            //运行模式 开发模式还是其他 默认不传则为开发模式  development开发环境状态  production生产环境状态 test测试环境模式
+            // Run mode development mode or other default is not pass for the development model development environment status production production environment status test test environment mode
             NODE_ENV: process.env.NODE_ENV || 'development',
-            //配置模式 默认直接读common/configs/appConfig  如果配置了则增加一个文件夹路径   common/configs/${CONFIG_MODE}/appConfig 
+            // Configuration mode acquiescence directly read common/configs/appConfig If configured, add a folder path common/configs/${CONFIG_MODE}/appConfig
             CONFIG_MODE: process.env.CONFIG_MODE || '',
-            //全局promise重新定义为bluebird
+            // The global promise is redefined as bluebird
             Promise: Bluebird,
-            //鲁大师 对象或集合操作辅助库
+            // Lu master object or collection operation auxiliary library
             _: lodash,
-            //格式化JSON输出统一化
+            // Format JSON output unified
             JSONResponse(status, data, message) {
                 return { status, data, message }
             },
-            //全局工具方法
+            // Global tool method
             appUtils,
-            //common目录路径
+            // Common directory path
             COMMON_PATH: pathTool.join(__dirname, '../../common')
         })
 
-        //APP_CONFIG 配置
+        // APP_CONFIG configuration
         Object.assign(
             global, {
-                //全局程序配置文件路径 会根据CONFIG_MODE变化
+                // The global program configuration file path changes according to CONFIG_MODE
                 APP_CONFIG: require(pathTool.join(COMMON_PATH, 'configs', `appConfig${CONFIG_MODE ? `-${CONFIG_MODE}` : ''}`)).default,
             }
         )
-        //其他初始化任务
+        // Other initialization tasks
         Object.assign(global,
             await tasks.run({ debug })
         )

@@ -4,7 +4,7 @@ import getCommonProps from './commonProps'
 import * as momentHelper from 'moment-helper'
 
 const Schema = mongoose.Schema
-//自动加载 无需人工引入文件  
+// Automatic loading does not require manual import of files
 export default {
     init({ debug }) {
         const requireHelper = appUtils.requireCommon('requireHelper')
@@ -18,8 +18,8 @@ export default {
                 collection: `${modelName}s`
             }
             /**
-             * 继承公共属性
-             */
+* Inherit public attributes
+*/
             model.props = { ...commonProps, ...model.props }
 
             const modelSchema = new Schema(model.props, model.collection)

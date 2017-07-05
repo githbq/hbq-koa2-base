@@ -1,6 +1,6 @@
 /**
- * 日期操作助手
- */
+* Date operation assistant
+*/
 import * as momentHelper from 'moment-helper'
 export default {
     ...momentHelper,

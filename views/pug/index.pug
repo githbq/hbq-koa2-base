@@ -1,6 +1,19 @@
 extends layout
 
 block content
-   p hello world! 
+   p hello Koa world!
+   p Upload File
+       form(action="/enums/upload" method="POST" enctype="multipart/form-data")
+           div
+               input(type="text" name="name" placeholder="Name")
+           div
+               input(type="file" name="image")
+           div
+               input(type="submit")
+   p
+   p
+   form(action="/enums/upload" method='post', enctype='multipart/form-data')
+      input(type='file', name='imageupload')
+      input(type='submit', name='uploadimage', value='Upload Image')
 block afterScripts
   

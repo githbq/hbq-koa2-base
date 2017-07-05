@@ -1,7 +1,7 @@
 import * as superagent from 'superagent'
 import * as superagentPromise from 'superagent-promise'
 let agent = superagentPromise(superagent, global.Promise)
-//创建代理路由 
+// Create an agent route
 export let createAgentRoute = (router, action, routeUrl, remoteUrl, callback) => {
     router[action](routeUrl, async (ctx, next) => {
         try {

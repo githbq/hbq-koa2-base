@@ -1,70 +1,76 @@
-# koa2-base typescript+koa2框架 
+# Koa2-base typescript + koa2 framework
 
-## 一个完整的 koa2 typescript 开发框架   
+## A complete koa2 typescript development framework   
 
-## 使用方式         
+## Howto use it      
 
 ```
-npm i -g iclone-cli //脚手架 会清除远程git信息 自动装库
-iclone init -t koa -n [自定义项目名称] //在当前目录以项目名称创建新项目
-或者 直接克隆
+npm i -g iclone-cli // scaffolding will clear the remote git information automatically loaded library
+iclone init -t koa -n [custom project name] // create a new project in the current directory with the project name
+
+Or direct cloning
 git clone https://github.com/githbq/hbq-koa2-base.git   
 ```
 
-## 环境要求             
+## Environmental requirements              
 - nodejs > 7.6      
-- 开发工具：vscode 最佳    
+- Development tools: vscode best    
 
-## 初始化操作        
+## Initialize the operation        
 ```     
-//大大提高装库效率以及更精确版本处理     
+// greatly improve the efficiency of the installation and more accurate version processing     
 yarn    
 ```     
 
-## 启动方式     
-#### 实时监听启动:用于开发环境          
+## start mode     
+#### Real-time monitoring start: for the development environment          
 ```         
-npm start  //使用本地mongodb环境 17951端口  
+npm start  // use local mongodb environment 27017 port
 ``` 
 
-#### 支持pm2部署:用于生产环境             
+#### Support for pm2 deployment: for production environments             
 ```
  npm run pm2 
 ```  
 
-#### 实时监听并且在浏览器上打开对应端口的地址        
+####  Real-time monitoring and opening the address of the corresponding port on the browser        
 ```     
 npm run pstart      
 ```         
 
-## 注意事项         
-1. `npm start` 执行的是 ts-node 不需要监听ts文件实时编译       
-2. `npm run start:build` 编译ts文件并且执行build后的入口文件    
+## Precautions          
+1.  `npm start` implementation of the ts-node does not need to monitor the ts file real-time compiler
+2. `npm run start:build` Compiles the ts file and executes the build file after build
 
-### 环境变量                
-* NODE_ENV 环境变量有两个值     
-    - `development` 用于标识当前是开发环境     
-    - `test` 用于标识当前是测试环境        
-    - `production` 用于标识当前是产品环境（正式上线环境）  
-* CONFIG_MODE 用于选择性配置启用哪一个配置文件      
+### environment variable                
+* The NODE_ENV environment variable has multiple values     
+    - `development` is used to identify the current development environment
+    - `test` is used to identify the current test environment
+    - `production` is used to identify the current product environment (formal on-line  
+* CONFIG_MODE is used to selectively configure which configuration file to enable      
     - `/src/common/configs/appConfig$-{CONFIG_MODE}`.ts 
 ---          
 
-## 如何调试         
-- 推荐使用 [vscode](https://code.visualstudio.com)开发使用    
+## How to debug         
+- It is recommended to use [vscode] (https://code.visualstudio.com)
 
-### 在vscode下调试              
-- 快捷键`ctrl+shift+b`会启动一次性编译         
-- 调整为实时监听编译，请自行更改.vscode/tasks.json         
-    - 将对应的task属性`isBuildCommand:true`   
+### Debugging under vscode              
+- Shortcuts `ctrl + shift + b` will start a one-time compilation         
+- Adjust the compilation for real-time monitoring, please change .vscode/tasks.json yourself         
+- will be the corresponding task property `isBuildCommand:true` 
+
+## Swagger Api
+
+https://npm.taobao.org/package/koa2-swagger-ui
+
 ---             
 
-## 目录结构         
+##  Directory Structure          
 ```  
 ├── build
 |  ├── app.js 
 ├── doc
-|  └── 如何使用.txt
+|  └── howto.txt
 ├── package.json
 ├── public
 |  └── favicon.ico

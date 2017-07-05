@@ -1,6 +1,6 @@
 /**
- * 枚举接口
- */
+* Enumeration interface
+*/
 const { momentHelper } = appUtils.requireCommon()
 export default ({ debug, logger }) => {
     return {
@@ -8,6 +8,10 @@ export default ({ debug, logger }) => {
             const allEnums = appUtils.getEnums()
             const result = type === 'all' ? allEnums : allEnums[type]
             return JSONResponse(1, result)
+        },
+        async getRand() {
+            var randomId = Math.random();
+            return JSONResponse(1, randomId);
         }
     }
 }

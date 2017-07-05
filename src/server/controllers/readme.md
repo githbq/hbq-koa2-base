@@ -1,6 +1,6 @@
-# 业务逻辑文件夹
-## 主要用来存放业务逻辑
-### 示例
+# Business logic folder
+## is mainly used to store business logic
+### example
 ``` javascript 
 /**
  * test

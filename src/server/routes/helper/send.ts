@@ -1,13 +1,13 @@
 import * as pathTool from 'path'
 /**
- * pathName 可以是一个路径或者是一个路径的数组会自动path.join
+ * PathName can be a path or an array of paths will automatically path.join
   usage:
    const { createSendRoute } = require('../helper/send')
    createSendRoute(route, '/send1', ['upload', '1.jpg'])
-   如果是需要做附件下载 添加中间件 写法：
+   If it is necessary to do attachment download add middleware wording:
    const { createSendRoute } = require('../helper/send')
     createSendRoute(route, '/send1', ['upload', '1.jpg'],(ctx)=>{createSendRoute(ctx.attachment(文件名:abc.xxx)})
-     
+
  */
 export let createSendRoute = (router, routeUrl, pathName, ...nextMiddleWares) => {
     router.get(routeUrl, async (ctx, next) => {

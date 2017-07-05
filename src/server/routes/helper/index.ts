@@ -1,3 +1,3 @@
-//自动加载 无需人工引入文件
+// Automatic loading does not require manual import of files
 let requireHelper = appUtils.requireCommon('requireHelper')
 export default requireHelper.requireDirKV(__dirname)

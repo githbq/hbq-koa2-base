@@ -1,7 +1,7 @@
 {
     "name": "koa2-base",
     "version": "1.0.15",
-    "description": "一个完整的 koa2 typescript 开发框架",
+    "description": "A complete koa2 typescript development framework",
     "scripts": {
         "start:build": "npm run tsc && node build",
         "clean": "rimraf node_modules",
@@ -9,7 +9,7 @@
         "start": "better-npm-run dev",
         "prod": "better-npm-run prod",
         "pstart": "concurrently \"npm run start\" \"npm run open\"",
-        "open": "opn \"http://localhost:6666\"",
+        "open": "opn \"http://localhost:31666\"",
         "koa": "node run",
         "tree:dir": "treee -l 2 --ignore node_modules/,.git/",
         "tsc": "npm run clear && tsc",

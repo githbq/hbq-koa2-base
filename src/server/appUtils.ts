@@ -1,6 +1,6 @@
 import * as pathTool from 'path'
 import requireHelper from '../common/requireHelper'
-//工具方法   在inits/initGlobal 挂到global上
+// The tool method is linked to global inits/initGlobal
 export default {
     require(...paths) {
         const path = pathTool.join.apply(null, paths)
@@ -13,7 +13,7 @@ export default {
     },
     requireController(...paths) {
         const controllerPathArr = [__dirname, 'controllers']
-        //如果没有传参数
+        // If no pass parameters
         if (paths.length === 0) {
 
             return requireHelper.requireDirKV(controllerPathArr)
@@ -21,13 +21,13 @@ export default {
         return this.require(...controllerPathArr, ...paths)
     },
     /**
-     * 获取攻举定义
-     */
+Get the attack definition
+*/
     getEnums() {
         return this.require(__dirname, 'enums')
     },
     requireCommon(...paths) {
-        //如果没有传参数
+        // If no pass parameters
         if (paths.length === 0) {
             return requireHelper.requireDirKV(COMMON_PATH)
         }

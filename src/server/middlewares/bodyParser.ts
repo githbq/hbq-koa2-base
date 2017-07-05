@@ -15,7 +15,7 @@ export default () => {
                 keepExtensions: true,
                 multiples: true,
                 onFileBegin: function (fieldName, file) {
-                    //空文件 在下次事件轮询时删除
+                    // Empty files are deleted when the next event is polled
                     if (!file.name) {
                         file.name = 'emptyfile'
                         file.disable = true
@@ -28,7 +28,7 @@ export default () => {
                     ioHelper.makeDirSync(filePath)
                     const fullPath = pathTool.join(filePath, file.name)
                     const relativePath = pathTool.relative(ROOT_PATH, fullPath)
-                    //替换正斜杠为反斜，这样可以直接往数据库存
+                    // Replace the forward slash for backlash, so that you can go directly to the data inventory
                     file.relativePath = ioHelper.replaceSep(relativePath)
                     file.path = fullPath
                 }

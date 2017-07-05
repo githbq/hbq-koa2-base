@@ -1,6 +1,6 @@
 /**
- * test
- */ 
+* Test
+*/ 
 export default (route, { controller }) => {
     route.get('/ejs', async (ctx, next) => {
         await ctx.render('ejs/index.html', { title: 'Iam ejs' })

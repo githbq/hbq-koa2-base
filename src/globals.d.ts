@@ -1,29 +1,29 @@
 /**
- * 定义全局智能提示
- */
+* Define global smart hints
+*/
 
-// declare namespace myLib {
-//     export function encodechar(data: any, opts?: any)
-// } 
-//应用程序配置
+// Declare namespace myLib {
+// Export function encodechar (data: any, opts ?: any)
+// }
+// Application configuration
 declare var APP_CONFIG: any
-//log4js 日志对象
+// Log4js log object
 declare var LOGGER: any
-//应用程序工具库
+// Application tool library
 declare var appUtils: any
-//JSONResponse 统一json格式化输出
+// JSONResponse unified json formatted output
 declare var JSONResponse: (status: number, data: any, message?: string) => { status: number, data: any, message: string }
-//当前程序的配置模式,默认是'' 此时走 src/common/configs/appConfig.ts 如果设为26 则使用 src/common/configs/appConfig-26.ts
+// The current program configuration mode, the default is '' then take src/common/configs/appConfig.ts if set to 26 use src/common/configs/appConfig-26.ts
 declare var CONFIG_MODE: string
-//指向 src/common 的绝对路径
+// Point to src/common absolute path
 declare var COMMON_PATH: string
-//node程序的运行环境状态 development | test | production
+// Node program running environment state development | test | production
 declare var NODE_ENV: string
-//指向cwd
+// Point to cwd
 declare var ROOT_PATH: string
-//持久化的缓存库对象
+// Persistent cache object
 declare var APP_CACHE: any
-// lodash  现在定义到-> shims.d.ts
-// declare var _: any
-//数据库操作对象 
+// Lodash is now defined to -> shims.d.ts
+// Declare var _: any
+// Database operation object
 declare var DB: { models: any, mongoose: any }

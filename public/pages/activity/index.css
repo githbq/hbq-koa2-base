@@ -1,0 +1,28 @@
+ .activity {
+     box-sizing: border-box;
+ }
+
+ .activity-container {
+     box-sizing: border-box;
+     width: 50%;
+     height: 100vh;
+     border: 5px solid rgb(16, 108, 200);
+     height: 100vh;
+     float: left;
+     overflow: auto;
+     padding: 15px;
+ }
+
+ .activity-container-left section {
+     background: #f7f7f7;
+     border-radius: 3px;
+     text-align: center;
+     margin: 1em;
+     position: relative !important;
+     padding-bottom: 10px;
+ }
+
+ .activity .md-button.md-primary.md-raised {
+     color: rgba(255, 255, 255, 0.87);
+     background-color: rgb(16, 108, 200);
+ }

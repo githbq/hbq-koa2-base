@@ -1,0 +1,32 @@
+extends layout-angular
+
+block content
+    div(ng-controller="activityController as vm" class="activity")
+        div(class="activity-container activity-container-left")
+            md-content 
+                section(layout="row" layout-sm="column" layout-align="center center" layout-wrap)
+                    md-button(class="md-raised md-primary" ng-click="clickMe($event)") 测试 
+                section(layout="row" layout-sm="column" layout-align="center center" layout-wrap)
+                    md-button(class="md-raised md-primary" ng-click="syncUpload($event)") 同步上传目录
+                section(layout="row" layout-sm="column" layout-align="center center" layout-wrap)
+                    md-button(class="md-raised md-primary" ng-click="syncDist($event)") 同步前端生成目录
+                section(layout="row" layout-sm="column" layout-align="center center" layout-wrap)
+                    md-button(class="md-raised md-primary" ng-click="clearData($event)") 清除临时数据(操作需谨慎!!!)  
+                section(layout="row" layout-sm="column" layout-align="center center" layout-wrap)
+                    input(type="text" ng-model="vm._id" placeholder="_id") 
+                    md-button(class="md-raised md-primary" ng-click="gengrateHtml($event)") 生成html
+                section(layout="row" layout-sm="column" layout-align="center center" layout-wrap)
+                    div http://down.58.com/h5/doraemon/views/index_view-generate-
+                        input(ng-model="vm.id" placeholder="请输入对应id") 
+                        | .html 
+                        br
+                        a(target="_blank" href="{{'http://down.58.com/h5/doraemon/views/index_view-generate-'+vm.id+'.html'}}")
+                            | 输入id后点击此链接
+        div(class="activity-container activity-container-right")
+            p {{ loading ? 'loading...' : url ? '地址:'+url : '' }}
+            pre {{ resData | json }}
+block afterScripts
+    script(src="@/pages/activity/index.js")
+block afterStyles
+    link(rel="stylesheet" type="text/css" href="@/pages/activity/index.css")
+

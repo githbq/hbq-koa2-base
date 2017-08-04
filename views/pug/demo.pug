@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  p hello world!
+    form(action="/resource" method="post" enctype="multipart/form-data")   
+      //- input(type="text" name="username")
+      input(type="file" id="attachment" name="attachment" multiple="multiple")
+
+      input(type="button" onClick="doSubmit()" value="提交do")
+ 
+  script.
+    window.doSubmit=function(){
+      alert('doSubmit')
+      debugger
+      var fileObj = document.getElementById("attachment").files[0]; // js 获取文件对象
+            var url = '/resource'; // 接收上传文件的后台地址 
+            var form = new FormData(); // FormData 对象
+            form.append("attachment", fileObj); // 文件对象 
+            xhr = new XMLHttpRequest();  // XMLHttpRequest 对象
+            xhr.open("post", url, true); 
+            xhr.onload=function(){
+              debugger
+               alert('complete')
+            }
+            xhr.send(form); 
+    }
+block afterScripts
+  

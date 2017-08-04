@@ -1,0 +1,16 @@
+ {
+     "version": "0.1.0",
+     "command": "npm",
+     "isShellCommand": true,
+     "args": ["run-script"],
+     "showOutput": "always",
+     "tasks": [{
+             "taskName": "tsc:w",
+             "isBuildCommand": true
+         },
+         {
+             "taskName": "tsc"
+
+         }
+     ]
+ }

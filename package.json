@@ -1,9 +1,8 @@
 {
     "name": "koa2-base",
-    "version": "3.0.1",
+    "version": "3.0.2",
     "scripts": {
         "start:build": "npm run tsc && node build",
-        "start:50": "npm run tsc && bnr dev:50",
         "clean": "rimraf node_modules",
         "clear": "rimraf build",
         "start": "better-npm-run dev",
@@ -25,14 +24,6 @@
             "env": {
                 "NODE_ENV": "development",
                 "DEBUG": "server:default"
-            }
-        },
-        "dev:50": {
-            "command": "nodemon  --config ./src/common/configs/nodemon.json",
-            "env": {
-                "NODE_ENV": "development",
-                "DEBUG": "server:default",
-                "CONFIG_MODE": "50"
             }
         },
         "prod": {

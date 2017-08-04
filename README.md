@@ -39,6 +39,8 @@ npm run pstart
 
 1. `npm start` 执行的是 ts-node 不需要监听ts文件实时编译
 2. `npm run start:build` 编译ts文件并且执行build后的入口文件
+3. 需要开启mongodb 端口号:17951  
+    - 配置文件地址: /src/common/configs/appConfig.ts -> mongodb
 
 ### 环境变量
 

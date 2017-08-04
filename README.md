@@ -1,11 +1,11 @@
 # koa2-base typescript+koa2框架  **3.0**
 
-## 一个完整的 koa2 typescript 开发框架  
+一个完整的 koa2 typescript 开发框架  
 
 ## 环境要求 
 
-- nodejs > 7.6  
-- 开发工具：vscode 最佳    
+nodejs > 7.6  
+开发工具：vscode 最佳    
 
 ## 初始化操作
 

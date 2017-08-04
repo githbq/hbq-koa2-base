@@ -1,6 +1,6 @@
 {
     "name": "koa2-base",
-    "version": "2.0.0",
+    "version": "1.0.16",
     "scripts": {
         "start:build": "npm run tsc && node build",
         "start:50": "npm run tsc && bnr dev:50",
@@ -37,9 +37,7 @@
         },
         "prod": {
             "command": "npm run tsc && nodemon  --config ./src/common/configs/nodemon.json",
-            "env": {
-                "NODE_ENV": "production"
-            }
+            "env": {"NODE_ENV": "production"}
         }
     },
     "dependencies": {
@@ -117,9 +115,7 @@
         "mocha",
         "chai"
     ],
-    "engines": {
-        "node": ">=7.6"
-    },
+    "engines": {"node": ">=7.6"},
     "repository": "https://github.com/githbq/hbq-koa2-base.git",
     "author": "hubiqing",
     "license": "MIT"

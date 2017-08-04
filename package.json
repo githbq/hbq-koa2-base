@@ -1,6 +1,6 @@
 {
     "name": "koa2-base",
-    "version": "1.0.16",
+    "version": "2.0.0",
     "scripts": {
         "start:build": "npm run tsc && node build",
         "start:50": "npm run tsc && bnr dev:50",

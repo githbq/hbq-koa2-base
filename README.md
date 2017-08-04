@@ -1,4 +1,4 @@
-# koa2-base typescript+koa2框架 
+# koa2-base typescript+koa2框架  **2.0**
 
 ## 一个完整的 koa2 typescript 开发框架  
 

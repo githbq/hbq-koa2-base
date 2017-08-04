@@ -11,7 +11,7 @@ export default async ({ debug, logger }) => {
     /**
      * 单点登陆权限相关
      */
-    !appUtils.isDev() && sso(router)
+    // !appUtils.isDev() && sso(router)  // 默认关闭
 
     //默认访问路径
     router.get('/', async (ctx, next) => {

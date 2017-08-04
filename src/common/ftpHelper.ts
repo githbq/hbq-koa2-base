@@ -2,8 +2,7 @@ import * as FtpHelper from 'ftp-helper'
 import ioHelper from './ioHelper'
 let { pathTool } = ioHelper
 function getPrefix() {
-    let prefix = appUtils.isDev() ? '/h5/doraemon-temp' : '/h5/doraemon'
-    // prefix = '/app58/static/doraemon-platform-temp'
+    let prefix = appUtils.isDev() ? '/' : '/' 
     return prefix
 }
 /**

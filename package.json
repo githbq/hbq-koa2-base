@@ -1,6 +1,6 @@
 {
-    "name": "doraemon-platform",
-    "version": "1.0.0",
+    "name": "koa2-base",
+    "version": "2.0.0",
     "scripts": {
         "start:build": "npm run tsc && node build",
         "start:50": "npm run tsc && bnr dev:50",
@@ -120,7 +120,7 @@
     "engines": {
         "node": ">=7.6"
     },
-    "repository": "http://gitlab.58corp.com/wuxianfe/doraemon-platform-be.git",
+    "repository": "https://github.com/githbq/hbq-koa2-base.git",
     "author": "hubiqing",
     "license": "MIT"
 }

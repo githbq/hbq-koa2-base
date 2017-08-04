@@ -1,6 +1,6 @@
 {
     "apps": [{
-        "name": "doraemon-dev",
+        "name": "koa2-base-dev",
         "script": "./build",
         "interpreter": "node",
         "error_file": "temp/logs/err.log",

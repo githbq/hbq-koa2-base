@@ -1,5 +1,7 @@
-# doraemon-platform    运营系统后台
- 
+# koa2-base typescript+koa2框架 
+
+## 一个完整的 koa2 typescript 开发框架  
+
 ## 环境要求 
 
 - nodejs > 7.6  
@@ -18,8 +20,7 @@ yarn
 
 #### 实时监听启动:用于开发环境
 ```
-npm start  //使用本地mongodb环境
-npm run start:26 //使用26 mongodb环境 数据库端口号 27058
+npm start  //使用本地mongodb环境 
 ```
 
 #### 支持pm2部署:用于生产环境

@@ -1,5 +1,4 @@
-import * as schedule from 'node-schedule'
-import getActivity from '../controllers/activity'
+import * as schedule from 'node-schedule' 
 import momentHelper from '../../common/momentHelper'
 /**
  * 计划任务 用来刷新数据，文件之类的
@@ -32,9 +31,7 @@ export default {
      * 每刻钟任务
      * @param param0 
      */
-    async quarterTasks({ debug, logger }) {
-        let { refreshEffactState } = getActivity({ debug, logger })
-        await refreshEffactState()
+    async quarterTasks({ debug, logger }) { 
     },
     /**
      * 启动夜间任务
@@ -60,8 +57,6 @@ export default {
      * 夜间任务
      * @param param0 
      */
-    async nightTasks({ debug, logger }) {
-        let { clearTempData } = getActivity({ debug, logger })
-        await clearTempData()
+    async nightTasks({ debug, logger }) { 
     }
 }

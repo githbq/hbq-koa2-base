@@ -8,8 +8,7 @@
         "merge_logs": true,
         "log_date_format": "YYYY-MM-DD HH:mm Z",
         "env": {
-            "NODE_ENV": "production",
-            "CONFIG_MODE": "50"
+            "NODE_ENV": "production"
         },
         "node_args": [
             "--harmony"

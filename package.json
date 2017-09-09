@@ -29,7 +29,10 @@
         },
         "prod": {
             "command": "npm run tsc && nodemon  --config ./src/common/configs/nodemon.json",
-            "env": { "NODE_ENV": "production" }
+            "env": {
+                "IS_LOGIN": false,
+                "NODE_ENV": "production"
+            }
         }
     },
     "dependencies": {

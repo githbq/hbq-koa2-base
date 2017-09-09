@@ -42,8 +42,7 @@ export default {
     return process.env.IS_LOGIN === true
   },
   log() {
-    // if (this.isDev())
-    {
+    if (this.isDev()) {
       console.log.apply(null, arguments)
     }
   },

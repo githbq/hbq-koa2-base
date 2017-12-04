@@ -52,7 +52,7 @@ npm run pstart
 * NODE_ENV 环境变量有两个值
     - `development` 用于标识当前是开发环境
     - `test` 用于标识当前是测试环境
-    - `production` 用于标识当前是产品环境（正式上线环境）
+    - `production` 用于标识当前是生产环境（正式上线环境）
 * CONFIG_MODE 用于选择性配置启用哪一个配置文件
     > `/src/common/configs/appConfig$-{CONFIG_MODE}`.ts
 ---

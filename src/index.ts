@@ -1,4 +1,5 @@
 import globalIniter from './server/inits/global'
+import './http'
 import * as http from 'http'
 import * as deb from 'debug'
 import * as chalk from 'chalk'

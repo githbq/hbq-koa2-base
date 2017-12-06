@@ -1,4 +1,6 @@
-import './http'
+
+
+require('./http')
 
 import globalIniter from './server/inits/global'
 

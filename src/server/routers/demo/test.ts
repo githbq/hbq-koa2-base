@@ -4,9 +4,20 @@
 // import * as QRCode from 'qrcode'
 const { ftpHelper } = appUtils.requireCommon()
 const http = require('http')
-
-
+import * as axios from 'axios'
+const _axios = axios as any
 export default (router, { controller }) => {
+
+  router.get('/request', async (ctx, nextx) => {
+    ctx.body = await _axios.get('http://localhost:3000/demo/test/a')
+      .then((response) => {
+        return { url: 'http://localhost:3000/demo/test/a', data: response.data }
+      })
+      .catch(function (error) {
+        console.log(error)
+      })
+  })
+
   router.get('/ejs', async (ctx, next) => {
     await ctx.render('ejs/index.html', { title: 'ejs' })
   })

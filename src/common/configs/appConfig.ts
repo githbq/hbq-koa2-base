@@ -7,7 +7,7 @@ export default {
     viewPath: pathTool.join(ROOT_PATH, 'views'),
     uploadPath: pathTool.join(ROOT_PATH, 'upload'),
     uploadStaticPrefix: 'upload',
-    port: 6666,
+    port: 6000,
     secret: 'koa2Base',
     projectName: 'koa2Base',
     //创建session的key会产生对应mongodb的集合`${sessionKey}s`

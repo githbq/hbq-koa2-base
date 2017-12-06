@@ -1,5 +1,4 @@
 import globalIniter from './server/inits/global'
-import * as http from 'http'
 import * as deb from 'debug'
 import * as chalk from 'chalk'
 //打开浏览器

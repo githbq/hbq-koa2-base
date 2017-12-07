@@ -94,8 +94,8 @@
     "@types/node" "*"
 
 "@types/lodash@^4.14.64":
-  version "4.14.64"
-  resolved "https://registry.npmjs.org/@types/lodash/-/lodash-4.14.64.tgz#979cf3a3d4a368670840bf9b3e448dc33ffe84ee"
+  version "4.14.88"
+  resolved "http://npm.zhaopin.com/@types%2flodash/-/lodash-4.14.88.tgz#97eaf2dc668f33ed8e511a5b627035f4ea20b0f5"
 
 "@types/mime@*":
   version "2.0.0"
@@ -2604,6 +2604,12 @@ lcid@^1.0.0:
   dependencies:
     invert-kv "^1.0.0"
 
+light-stub@^0.0.1:
+  version "0.0.1"
+  resolved "http://npm.zhaopin.com/light-stub/-/light-stub-0.0.1.tgz#147663eeb0433f7ef82cda8bf5b8297a5c933a38"
+  dependencies:
+    tslib "^1.6.1"
+
 load-json-file@^1.0.0:
   version "1.1.0"
   resolved "https://registry.npmjs.org/load-json-file/-/load-json-file-1.1.0.tgz#956905708d58b4bab4c2261b04f59f31c99374c0"
@@ -2714,7 +2720,7 @@ lodash.restparam@^3.0.0:
 
 lodash@^4.14.0, lodash@^4.15.0, lodash@^4.17.4, lodash@^4.5.1, lodash@^4.7.0:
   version "4.17.4"
-  resolved "https://registry.npmjs.org/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
+  resolved "http://npm.zhaopin.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
 log4js@^1.0.1:
   version "1.1.1"

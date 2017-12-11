@@ -4,7 +4,7 @@ Http.request = function (options, _responseCallback) {
   const responseCallback = function (res) {
     debugger
     res.statusCode = 408
-    _responseCallback.apply(this, arguments)
+    return _responseCallback.apply(this, arguments)
   }
   const req = _request.apply(this, [options, responseCallback])
   debugger

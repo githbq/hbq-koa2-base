@@ -15,6 +15,8 @@ export default (router, { controller }) => {
       })
       .catch(function (error) {
         console.log(error)
+        debugger
+        ctx.body = { message: error.message }
       })
   })
 

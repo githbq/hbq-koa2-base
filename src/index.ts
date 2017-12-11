@@ -1,6 +1,6 @@
 
 
-require('./http')
+require('./httpIntercept')
 
 import globalIniter from './server/inits/global'
 

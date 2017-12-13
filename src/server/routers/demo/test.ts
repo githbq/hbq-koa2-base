@@ -9,15 +9,14 @@ const _axios = axios as any
 export default (router, { controller }) => {
 
   router.get('/request', async (ctx, nextx) => {
-    ctx.body = await _axios.get('http://localhost:3000/demo/test/a')
-      .then((response) => {
-        return { url: 'http://localhost:3000/demo/test/a', data: response.data }
-      })
-      .catch(function (error) {
-        console.log(error)
-        debugger
-        ctx.body = { message: error.message }
-      })
+    try {
+      const response = await _axios.get('http://localhost:3000/demo/test/a')
+      ctx.body = { url: 'http://localhost:3000/demo/test/a', data: response.data }
+    } catch (e) {
+      console.log(e)
+      debugger
+      ctx.body = { message: e.message }
+    }
   })
 
   router.get('/ejs', async (ctx, next) => {

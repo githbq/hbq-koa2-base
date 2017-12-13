@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../../libs/angular/angular.js"></script>
+</head>
+
+<body ng-app="app">
+  <div ng-controller="mainController">{{x}}</div>
+  <script>
+    angular.module('app', [])
+      .controller('mainController', function ($scope, $http) {
+        $scope.x = 1111
+        debugger
+        $http({
+          method: 'GET',
+          url: '/demo/test/request'
+        }).then(function (response) {
+          debugger
+          // 请求成功执行代码
+        }, function (response) {
+          debugger
+          // 请求失败执行代码
+        });
+      })
+  </script>
+</body>
+
+</html>

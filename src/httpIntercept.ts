@@ -6,6 +6,7 @@ Http.request = function (options, _responseCallback) {
   const responseCallback = function (res) {
     debugger
     // res.statusCode = 408
+    //res.statusMessage='request timeout'
     return _responseCallback.apply(this, arguments)
   }
   const req = _request.apply(this, [options, responseCallback])
@@ -18,7 +19,8 @@ Http.request = function (options, _responseCallback) {
   setTimeout(() => {
     req.res = response
     req.emit('response', response)
-    req.write('hello')
+    // req.write('hello')
+    debugger
     response.emit('end')
   }, 500)
   debugger

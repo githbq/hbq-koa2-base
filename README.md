@@ -72,24 +72,35 @@ npm run pstart
 ## 目录结构
 
 ```
+├── README.md
 ├── build
 |  ├── app.js
-├── doc
-|  └── 如何使用.txt
+|  ├── app.js.map
+|  ├── common
+|  ├── index.js
+|  ├── index.js.map
+|  └── server
 ├── package.json
 ├── public
-|  └── favicon.ico
-├── README.md
+|  ├── common
+|  ├── favicon.ico
+|  ├── index.html
+|  ├── libs
+|  └── pages
 ├── run.js
 ├── src
 |  ├── app.ts
-├── temp
-|  ├── logs
-|  └── min-image
+|  ├── common
+|  ├── globals.d.ts
+|  ├── index.test.ts
+|  ├── index.ts
+|  ├── server
+|  └── shims.d.ts
 ├── test
+|  ├── mocha.opts
+|  └── readme.md
 ├── tsconfig.json
 ├── tslint.json
-├── upload
 ├── views
 |  ├── ejs
 |  └── pug

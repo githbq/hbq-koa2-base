@@ -54,7 +54,7 @@ npm run pstart
     - `test` 用于标识当前是测试环境  
     - `production` 用于标识当前是生产环境（正式上线环境）
 * CONFIG_MODE 用于选择性配置启用哪一个配置文件
-    > `/src/common/configs/appConfig$-{CONFIG_MODE}`.ts
+    `/src/common/configs/appConfig$-{CONFIG_MODE}`.ts
 ---
 
 ## 如何调试

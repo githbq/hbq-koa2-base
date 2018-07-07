@@ -21,7 +21,7 @@ export default {
     return this.require(...controllerPathArr, ...paths)
   },
   /**
-   * 获取攻举定义
+   * 获取枚举定义
    */
   getEnums() {
     return this.require(__dirname, 'enums')

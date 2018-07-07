@@ -13,8 +13,7 @@ import appIniter from './app'
     try {
         app = await appIniter.init({ debug, logger: LOGGER })
     } catch (e) {
-        console.error(e)
-        return
+        console.error(e) 
     }
     //初始化全局变量
     const config = APP_CONFIG

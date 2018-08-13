@@ -17,11 +17,11 @@ export default (router, { controller }) => {
     createSendRouter(router, '/send1', ['upload', '1.jpg'])
     createSendRouter(router, '/send2', ['upload', '1.mp3'])
     let x = 1
-    router.get('/a', async (ctx, next) => { 
+    router.get('/a', async (ctx, next) => {
         ctx.body = JSONResponse(1, { a: 1, b: 2, c: 3, aaa: 'aaaa' }, '成功')
     })
     router.get('/b', async (ctx, next) => {
-        await ctx.send(ctx, 'index.html', { root: 'public/html' })
+        await ctx.send('index.html', { root: 'public/' })
     })
     // router.get('/qrcode', async (ctx) => {
     //     let base64 = await new Promise(resolve => {

@@ -39,7 +39,7 @@ export default {
     return NODE_ENV !== 'production'
   },
   isLogin() {
-    return process.env.IS_LOGIN === true
+    return process.env.IS_LOGIN === 'true'
   },
   log() {
     if (this.isDev()) {

@@ -19,7 +19,6 @@
             "bluebird",
             "bluebird-global",
             "cli-color",
-            "fs-extra-promise",
             "koa",
             "lodash",
             "mocha",

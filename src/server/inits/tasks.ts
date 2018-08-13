@@ -4,11 +4,24 @@ import * as Promise from 'bluebird'
 import * as log4js from 'koa-log4'
 import database from '../database'
 import CachemanMongo from 'cacheman-mongo2'
+
 //需要执行的初始化任务
 export default {
     //执行初始化
     async run({ debug }) {
-        return { LOGGER: await this.LOGGER({ debug }), DB: await this.DB({ debug }), APP_CACHE: await this.APP_CACHE({ debug }) }
+        const self = this
+        return {
+            LOGGER: await this.LOGGER({ debug }),
+            ...(APP_CONFIG.useMongodb ?
+                {
+                    DB: await self.DB({ debug }),
+                    APP_CACHE: await self.APP_CACHE({ debug })
+                } :
+                { 
+                    DB: null,
+                     APP_CACHE : null 
+                    }) 
+        }
     },
     async DB({ debug }) {
         //初始化数据库 

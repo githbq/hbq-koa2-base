@@ -7,7 +7,7 @@ export default {
         const io = new IO()
         io.attach(app)
         //初始化socket缓存
-        await APP_CACHE.setAsync('socket-cache', [])
+        APP_CACHE && await APP_CACHE.setAsync('socket-cache', [])
         io.use(async (ctx, next) => {
             await next()
         })

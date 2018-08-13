@@ -1,6 +1,6 @@
 import globalIniter from './server/inits/global'
 import * as deb from 'debug'
-import * as chalk from 'chalk'
+import chalk from 'chalk'
 //打开浏览器
 import * as open from 'open'
 const debug = deb('server:default')
@@ -13,7 +13,7 @@ import appIniter from './app'
     try {
         app = await appIniter.init({ debug, logger: LOGGER })
     } catch (e) {
-        console.error(e) 
+        console.error(e)
     }
     //初始化全局变量
     const config = APP_CONFIG
@@ -54,7 +54,7 @@ import appIniter from './app'
         },
         onListening() {
             let { port } = this.address()
-            appUtils.log(chalk.blue.bgWhite(`✅ 启动地址 127.0.0.1:${port}`))
+            appUtils.log(chalk.blue.bgWhite(`✅ 启动地址 http://127.0.0.1:${port}`))
         }
     }
     starter.run()

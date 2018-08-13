@@ -1,5 +1,7 @@
 import * as pathTool from 'path'
 export default {
+    // 是否启用 mongodb 链接 ，默认不启用
+    useMongodb: false,
     mongodb: 'mongodb://127.0.0.1:17951/koa2Base',
     apiPrefix: 'api',
     hostPrefix: '', //应用程序上线域名前缀
@@ -46,7 +48,7 @@ class SSOConfig {
     public serverPath: string
     public validate: string
     public loginOut: string
-    constructor(serverPath: string, validate: string, loginOut: string) {
+    constructor (serverPath: string, validate: string, loginOut: string) {
         this.serverPath = serverPath
         this.validate = validate
         this.loginOut = loginOut

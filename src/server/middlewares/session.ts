@@ -1,7 +1,7 @@
 import * as session from 'koa-session-minimal'
 import * as MongooseStore from 'koa-session-mongoose'
 export default () => {
-    return [session({
+    return APP_CONFIG.useMongodb ? [session({
         key: APP_CONFIG.sessionKey,
         store: new MongooseStore({
             collection: `${APP_CONFIG.sessionKey}s`,
@@ -23,5 +23,5 @@ export default () => {
         }
         await next()
     }
-    ]
+    ] : []
 }

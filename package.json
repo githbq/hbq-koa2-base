@@ -51,6 +51,7 @@
         "koa-cas": "^0.0.3",
         "koa-compress": "^2.0.0",
         "koa-conditional-get": "^2.0.0",
+        "koa-cors": "^0.0.16",
         "koa-etag": "^3.0.0",
         "koa-favicon": "^2.0.0",
         "koa-json": "^2.0.2",

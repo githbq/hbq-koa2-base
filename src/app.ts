@@ -30,6 +30,7 @@ export default {
       ['static', APP_CONFIG.uploadPath, APP_CONFIG.uploadStaticPrefix],
       // 本项目中的public静态文件夹 前缀@
       ['static', ROOT_PATH + '/public', '@'],
+      ['cors'],
       ['router', { debug, logger }]
     ]
     for (let n of middlewares) {

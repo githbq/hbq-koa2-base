@@ -7,6 +7,9 @@ export default (router, { controller }) => {
     router.get('/ejs', async (ctx, next) => {
         await ctx.render('ejs/index.html', { title: 'ejs' })
     })
+    router.get('/pug', async (ctx, next) => {
+        await ctx.render('pug/demo.pug', { title: 'pug angularjs' })
+    })
     router.get('/ftp2', async (ctx, next) => {
         ctx.body = await ftpHelper.uploadUploadFiles()
     })

@@ -38,8 +38,8 @@ export default {
   isDev() {
     return NODE_ENV !== 'production'
   },
-  isLogin() {
-    return process.env.IS_LOGIN === 'true'
+  checkLogin() {
+    return process.env.CHECK_LOGIN === 'true'
   },
   log() {
     if (this.isDev()) {

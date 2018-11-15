@@ -11,7 +11,7 @@ export default async ({ debug, logger }) => {
   /**
    * 单点登陆权限相关
    */
-  appUtils.isLogin() && !appUtils.isDev() && sso(router)  // 默认关闭
+  appUtils.checkLogin() && !appUtils.isDev() && sso(router)  // 默认关闭
 
   //默认访问路径
   router.get('/', async (ctx, next) => {
@@ -28,7 +28,7 @@ export default async ({ debug, logger }) => {
       ctx.getUserName = function () {
         return ctx.cookies.get('username') || ''
       }
-      if (appUtils.isDev() || !appUtils.isLogin()) {
+      if (appUtils.isDev() || !appUtils.checkLogin()) {
         return await next()
       }
 

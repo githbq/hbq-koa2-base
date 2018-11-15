@@ -30,7 +30,7 @@
         "prod": {
             "command": "npm run tsc && nodemon  --config ./src/common/configs/nodemon.json",
             "env": {
-                "IS_LOGIN": false,
+                "CHECK_LOGIN": false,
                 "NODE_ENV": "production"
             }
         }

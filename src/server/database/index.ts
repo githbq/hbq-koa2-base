@@ -30,9 +30,7 @@ export default {
                 this.updateTimeString = this.createTimeString
                 next()
             })
-            modelSchema.pre('update', function (next) {
-                delete this.createTime
-                delete this.createTimeString
+            modelSchema.pre('update', function (next) { 
                 this.updateTime = Date.now()
                 this.updateTimeString = momentHelper.get(this.updateTime)
                 next()

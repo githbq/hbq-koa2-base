@@ -1,6 +1,6 @@
 //mongodb操作库
 import * as mongoose from 'mongoose'
-import * as Promise from 'bluebird'
+import * as BPromise from 'bluebird'
 import * as log4js from 'koa-log4'
 import database from '../database'
 import CachemanMongo from 'cacheman-mongo2'
@@ -25,7 +25,7 @@ export default {
     },
     async DB({ debug }) {
         //初始化数据库 
-        mongoose.Promise = Promise
+        mongoose.Promise = BPromise
         await new Promise((resolve, reject) => {
             mongoose.connect(APP_CONFIG.mongodb, {
                 promiseLibrary: global.Promise,
@@ -68,10 +68,10 @@ export default {
             })
         })
         //将get set del clear 方法promise化，对应方法名增加`Async`后缀
-        Promise.promisifyAll(cache)
+        BPromise.promisifyAll(cache)
         //默认有效期设为24小时
         cache.setAsync = function (key, value, seconds = (60 * 60 * 24)) {
-            return new Promise((resolve, reject) => {
+            return new BPromise((resolve, reject) => {
                 cache.set(key, value, seconds, function (err) {
                     if (err) {
                         reject(err)

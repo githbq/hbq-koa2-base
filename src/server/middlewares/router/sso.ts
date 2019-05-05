@@ -14,7 +14,7 @@ export default (router) => {
         let ticket = ctx.query.ticket
         if (!ticket) {
             //此处会跳转,不需要再调用next
-            cas.authenticate(ctx)
+           return cas.authenticate(ctx)
         }
         const result = await cas.validate(ticket, serviceUrl)
         if (result.status) {

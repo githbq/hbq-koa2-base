@@ -45,7 +45,6 @@ export default async ({ debug, logger }) => {
     async (ctx, next) => {
       await next()
       if (ctx.status === 404) {
-        ctx.status = 404
         await ctx.render('pug/404.pug')
       }
     },

@@ -16,7 +16,7 @@
         "test": "mocha src/**/*.test.ts",
         "pm2": "npm run tsc && pm2 start ./src/common/configs/pm2/pm2.json",
         "pm2:dev": "npm run tsc && pm2 start ./src/common/configs/pm2/pm2-dev.json",
-        "lint": "tslint \"src/**/*.ts\" "
+        "lint": "tslint \"src/**/*.ts\" --fix"
     },
     "betterScripts": {
         "dev": {

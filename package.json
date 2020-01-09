@@ -73,7 +73,7 @@
         "mongoose": "^5.7.5",
         "node-schedule": "^1.2.3",
         "nodemon": "^1.11.0",
-        "open": "^0.0.5",
+        "open": "^6.0.0",
         "pug": "^2.0.0-rc.1",
         "require-helper": "^0.0.18",
         "rimraf": "^2.6.1",

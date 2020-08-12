@@ -6,6 +6,25 @@
 
 <body>
     hello world!
+
+    <script>
+        //创建异步对象
+        var xhr = new XMLHttpRequest();
+
+        xhr.open('get', 'a');//发送请求
+        //post请求一定要添加请求头才行不然会报错 
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhr.send();
+
+        //步骤四:注册事件 onreadystatechange 状态改变就会调用
+
+        xhr.onreadystatechange = function () {
+            // 这步为判断服务器是否正确响应
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                alert(xhr.responseText);
+            }
+        };
+    </script>
 </body>
 
 </html>

@@ -41,11 +41,11 @@ npm start
 ### 业务逻辑定义
 
 业务逻辑目录： `src/controllers/`
-    - 该目录支持多层级，与路由目录一一对应
-    - 架构会自动将该 `src/controllers/demo/test.ts` 导出的对象，注入到与之相对应的 `src/routers/demo/test.ts` 导出的函数参数中： 
+  + 该目录支持多层级，与路由目录一一对应
+  + 架构会自动将该 `src/controllers/demo/test.ts` 导出的对象，注入到与之相对应的 `src/routers/demo/test.ts` 导出的函数参数中： 
 
 ``` ts
-// src/routers/demo/test.ts
+// src/controllers/demo/test.ts
 export default ({ debug, logger }) => {
     return {
          async hello(){

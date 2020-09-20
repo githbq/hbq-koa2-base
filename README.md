@@ -23,8 +23,6 @@ npm i
 
 ## 启动方式
 
-### 方式一
-
 ``` shell
 # 直接由ts-node引导入口文件无需编译,代码变更时由 `nodemon` 重新启动服务
 npm start 

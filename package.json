@@ -114,11 +114,11 @@
         "typescript",
         "koa2",
         "restful",
-        "mocha",
-        "chai"
+        "jest",
+        "log4js"
     ],
     "engines": {
-        "node": ">=8.9"
+        "node": ">=10"
     },
     "repository": "https://github.com/githbq/hbq-koa2-base.git",
     "author": "hubiqing",

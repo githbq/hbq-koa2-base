@@ -1,3 +1,3 @@
 export default {
-    activityStatus: { '1': '已布发', '0': '未发布', '-1': '已下架' } 
+    activityStatus: { '1': '已发布', '0': '未发布', '-1': '已下架' }
 }

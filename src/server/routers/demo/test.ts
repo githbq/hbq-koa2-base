@@ -21,6 +21,7 @@ export default (router, { controller }) => {
     createSendRouter(router, '/send2', ['upload', '1.mp3'])
     let x = 1
     router.get('/a', async (ctx, next) => {
+        debugger
         // ctx.status=404
         ctx.body = JSONResponse(1, { a: 1, b: 2, c: 3, aaa: 'aaaa' }, '成功')
     })

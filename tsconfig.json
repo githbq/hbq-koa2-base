@@ -13,18 +13,27 @@
         "importHelpers": true,
         "strictNullChecks": false,
         "allowUnreachableCode": true,
-        "lib": ["es2017"],
-        "typeRoots": ["node_modules/@types"],
+        "lib": [
+            "es2017"
+        ],
+        "typeRoots": [
+            "node_modules/@types"
+        ],
         "types": [
             "bluebird",
             "bluebird-global",
             "cli-color",
             "koa",
             "lodash",
-            "mocha",
             "node",
-            "should"
+            "jest"
         ],
+        "baseUrl": "./",
+        "paths": {
+            "@/*": [
+                "./src/*"
+            ]
+        },
         "outDir": "./build",
         "rootDir": "./src"
     },

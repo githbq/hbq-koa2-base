@@ -5,7 +5,7 @@ import CAS from 'koa-cas'
 export default (router) => {
     const serviceUrl = APP_CONFIG.getHostName() + '/login'
     const cas = new CAS({
-        baseUrl: APP_CONFIG.getSsoConfig().serverPath,
+        baseUrl: APP_CONFIG.getSSOConfig().serverPath,
         service: serviceUrl,
         secureSSL: false,
     })
@@ -14,7 +14,7 @@ export default (router) => {
         let ticket = ctx.query.ticket
         if (!ticket) {
             //此处会跳转,不需要再调用next
-           return cas.authenticate(ctx)
+            return cas.authenticate(ctx)
         }
         const result = await cas.validate(ticket, serviceUrl)
         if (result.status) {

@@ -9,24 +9,19 @@
             "request": "launch",
             "protocol": "inspector",
             "name": "启动程序",
-            "program": "${workspaceRoot}/build/index.js",
+            "program": "${workspaceRoot}/src/index.ts",
+            "runtimeArgs": [
+                "--nolazy",
+                "-r",
+                "ts-node/register"
+            ],
             "cwd": "${workspaceRoot}",
             "env": {
                 "NODE_ENV": "development"
-            }
+            },
+            "console": "integratedTerminal",
+            "sourceMaps": true,
+            "internalConsoleOptions": "neverOpen"
         }
-        //下面这种方式调试需要先编译 会比较慢,优点是不需要 `ctrl+shift+b` 监听编译ts
-        // , {
-        //     "type": "node",
-        //     "request": "launch",
-        //     "protocol": "inspector",
-        //     "name": "启动程序",
-        //     "program": "${workspaceRoot}/src/index.ts",
-        //     "cwd": "${workspaceRoot}",
-        //     "env": { "NODE_ENV": "development" },
-        //     "outFiles": ["${workspaceRoot}/build/**/*.js"],
-        //     "sourceMaps": true,
-        //     "preLaunchTask": "tsc"
-        // }
     ]
 }

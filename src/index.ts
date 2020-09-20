@@ -1,11 +1,14 @@
-import globalIniter from './server/inits/global'
+
 import * as deb from 'debug'
 import chalk from 'chalk'
-//打开浏览器
+import * as epipebomb from 'epipebomb'
 import * as open from 'open'
 const debug = deb('server:default')
+
+import globalIniter from './server/inits/global'
 import appIniter from './app'
-(async () => {
+
+!(async () => {
     //初始化全局变量
     await globalIniter.init({ debug })
     //初始化koa app
@@ -66,5 +69,5 @@ import appIniter from './app'
     //     }
     // })
     //遇到EPIPE错误 解决方案
-    require('epipebomb')()
+    epipebomb()
 })()

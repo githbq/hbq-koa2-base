@@ -9,12 +9,13 @@
     "events": {},
     "execMap": {
         "": "node",
-        "js": "node --harmony"
+        "js": "node --harmony",
+        "ts": "ts-node -r tsconfig-paths/register"
     },
-    "exec": "node ./build/index.js",
+    "exec": "ts-node -r tsconfig-paths/register ./src",
     "watch": [
-        "build/**/*.js"
+        "src/**/*.{ts,json}"
     ],
     "env": {},
-    "ext": "js json"
+    "ext": "ts js json"
 }

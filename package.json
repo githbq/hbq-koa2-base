@@ -1,22 +1,18 @@
 {
     "name": "koa2-base",
-    "version": "3.0.3",
+    "version": "3.0.4",
     "scripts": {
-        "start:build": "npm run tsc && node build",
-        "clean": "rimraf node_modules",
-        "clear": "rimraf build",
         "start": "better-npm-run dev",
+        "debug": "better-npm-run debug",
+        "tsc": "tsc",
         "prod": "better-npm-run prod",
-        "pstart": "concurrently \"npm run start\" \"npm run open\"",
-        "open": "opn \"http://localhost:3604\"",
-        "koa": "node run",
+        "pstart": "concurrently 'npm run start' 'npm run open'",
+        "open": "opn http://localhost:6001",
         "tree:dir": "treee -l 2 --ignore node_modules/,.git/",
-        "tsc": "npm run clear && tsc",
-        "tsc:w": "npm run clear && tsc -w",
-        "test": "mocha src/**/*.test.ts",
-        "pm2": "npm run tsc && pm2 start ./src/common/configs/pm2/pm2.json",
-        "pm2:dev": "npm run tsc && pm2 start ./src/common/configs/pm2/pm2-dev.json",
-        "lint": "tslint \"src/**/*.ts\" --fix"
+        "test": "jest --forceExit --detectOpenHandles --colors",
+        "pm2": "npx tsc && pm2 start ./src/common/configs/pm2/pm2.json",
+        "pm2:dev": "npx tsc && pm2 start ./src/common/configs/pm2/pm2-dev.json",
+        "lint": "tslint src/**/*.ts --fix"
     },
     "betterScripts": {
         "dev": {
@@ -27,8 +23,16 @@
                 "DEBUG": "server:default"
             }
         },
+        "debug": {
+            "command": "nodemon --inspect --config ./src/common/configs/nodemon.json",
+            "env": {
+                "CONFIG_MODE": "dev",
+                "NODE_ENV": "development",
+                "DEBUG": "server:default"
+            }
+        },
         "prod": {
-            "command": "npm run tsc && nodemon  --config ./src/common/configs/nodemon.json",
+            "command": "npx tsc && nodemon  --config ./src/common/configs/nodemon.json",
             "env": {
                 "CHECK_LOGIN": false,
                 "NODE_ENV": "production"
@@ -67,41 +71,41 @@
         "koa-static-cache": "^5.0.1",
         "koa-views": "^6.0.2",
         "koa2-history-api-fallback": "^0.0.5",
-        "lodash": "^4.17.19",
+        "lodash": "^4.17.20",
         "moment-helper": "^0.0.1",
         "mongo-model-statics": "^1.0.6",
-        "mongoose": "^5.7.5",
-        "node-schedule": "^1.2.3",
-        "nodemon": "^1.11.0",
-        "open": "^6.0.0",
-        "pug": "^2.0.0-rc.1",
+        "mongoose": "^5.10.6",
+        "node-schedule": "^1.3.2",
+        "open": "^7.2.1",
+        "pug": "^3.0.0",
         "require-helper": "^0.0.18",
-        "rimraf": "^2.6.1",
+        "rimraf": "^3.0.2",
         "superagent": "^3.5.2",
         "superagent-promise": "^1.1.0",
-        "transliteration": "^1.6.2"
+        "transliteration": "^1.6.2",
+        "tslib": "^2.0.1"
     },
     "devDependencies": {
         "@types/bluebird": "^3.5.3",
         "@types/bluebird-global": "^3.5.2",
         "@types/cli-color": "^0.3.29",
+        "@types/jest": "^26.0.13",
         "@types/koa": "^2.0.46",
         "@types/lodash": "^4.14.64",
-        "@types/mocha": "^2.2.41",
         "@types/node": "^10.5.8",
-        "@types/should": "^8.3.0",
         "better-npm-run": "0.0.14",
         "chai": "^3.5.0",
         "concurrently": "^3.1.0",
-        "mocha": "^3.3.0",
+        "jest": "^26.4.2",
+        "nodemon": "^2.0.4",
         "opn-cli": "^3.1.0",
-        "should": "11.2.1",
         "supertest": "^1.2.0",
         "tree-cli": "^0.4.12",
+        "ts-jest": "^26.3.0",
         "ts-node": "^3.0.3",
-        "tslib": "^1.6.1",
-        "tslint": "^5.2.0",
-        "typescript": "^2.3.2"
+        "tsconfig-paths": "^3.9.0",
+        "tslint": "^6.1.3",
+        "typescript": "^4.0.3"
     },
     "keywords": [
         "typescript",
@@ -110,9 +114,7 @@
         "mocha",
         "chai"
     ],
-    "engines": {
-        "node": ">=8.9"
-    },
+    "engines": {"node": ">=8.9"},
     "repository": "https://github.com/githbq/hbq-koa2-base.git",
     "author": "hubiqing",
     "license": "MIT"

@@ -27,7 +27,7 @@ export default {
     /**
      * 获取单点登陆配置
      */
-    getSsoConfig(): SSOConfig {
+    getSSOConfig(): SSOConfig {
         return appUtils.isDev() ?
             new SSOConfig(
                 'https://sso.xxx.com:8443/gsso'
@@ -48,7 +48,7 @@ class SSOConfig {
     public serverPath: string
     public validate: string
     public loginOut: string
-    constructor (serverPath: string, validate: string, loginOut: string) {
+    constructor(serverPath: string, validate: string, loginOut: string) {
         this.serverPath = serverPath
         this.validate = validate
         this.loginOut = loginOut

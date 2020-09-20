@@ -1,6 +1,6 @@
 {
     "name": "koa2-base",
-    "version": "3.0.4",
+    "version": "3.0.5",
     "publishConfig": {
         "registry": "https://registry.npmjs.org"
     },
@@ -117,9 +117,7 @@
         "mocha",
         "chai"
     ],
-    "engines": {
-        "node": ">=8.9"
-    },
+    "engines": {"node": ">=8.9"},
     "repository": "https://github.com/githbq/hbq-koa2-base.git",
     "author": "hubiqing",
     "license": "MIT"

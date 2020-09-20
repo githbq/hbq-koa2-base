@@ -28,7 +28,43 @@ npm i
 npm start 
 ```
 
- 
+## 开发
+
+### 路由定义
+
+路由目录: `src/server/routers/`
+  + 除 `help` 以外目录都会自动识别路由
+  + 如 `src/server/routers/demo/test.ts`
+    - 对应路径 `http://localhost:6001/demo/test/[route-name]`
+  + 你可以添加自定义文件或者文件夹，会自动以目录层级作为路由路径进行注册
+
+### 业务逻辑定义
+
+业务逻辑目录： `src/controllers/`
+    - 该目录支持多层级，与路由目录一一对应
+    - 架构会自动将该 `src/controllers/demo/test.ts` 导出的对象，注入到与之相对应的 `src/routers/demo/test.ts` 导出的函数参数中： 
+
+``` ts
+// src/routers/demo/test.ts
+export default ({ debug, logger }) => {
+    return {
+         async hello(){
+             return 'hello world'
+         }
+    }
+}
+```
+
+``` ts
+// src/routers/demo/test.ts
+export default (router, { controller }) => {
+    router.get('/hi', async (ctx, next) => {
+        ctx.body = controller.hello()
+        // 访问: http://localhost:6001/demo/test/hi 
+        // 响应: 'hello world'
+    })
+}
+```
 
 #### 支持pm2部署: 用于生产环境
 

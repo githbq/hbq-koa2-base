@@ -120,5 +120,6 @@
     "engines": {"node": ">=10"},
     "repository": "https://github.com/githbq/hbq-koa2-base.git",
     "author": "hubiqing",
-    "license": "MIT"
+    "license": "MIT",
+    "files": ["./src"]
 }

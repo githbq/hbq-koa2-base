@@ -5,6 +5,9 @@ const { momentHelper } = appUtils.requireCommon()
 export default ({ debug, logger }) => {
     // const model = APP_CONFIG.useMongodb?global.DB.models.demo:{}
     return {
+        hello() {
+            return 'hello'
+        }
         // async add(params, query, fields) {
         //     const result = await model._add(fields)
         //     return JSONResponse(1, result)

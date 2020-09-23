@@ -1,5 +1,5 @@
 import * as KoaRouter from 'koa-router'
-import routers from '../../routers'
+import routers from '../../../routers'
 import sso from './sso'
 /**
  * 注册路由

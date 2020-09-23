@@ -1,9 +1,8 @@
-/**
- * test
- */
-// import * as QRCode from 'qrcode'
 const { ftpHelper } = appUtils.requireCommon()
 export default (router, { controller }) => {
+    router.get('/hello', async (ctx, next) => {
+        ctx.body = controller.hello()
+    })
     router.get('/ejs', async (ctx, next) => {
         await ctx.render('ejs/index.html', { title: 'ejs' })
     })

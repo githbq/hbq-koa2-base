@@ -12,7 +12,7 @@ export default {
     }
   },
   requireController(...paths) {
-    const controllerPathArr = [__dirname, 'controllers']
+    const controllerPathArr = [__dirname, '..', 'controllers']
     //如果没有传参数
     if (paths.length === 0) {
 

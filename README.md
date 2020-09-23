@@ -32,9 +32,9 @@ npm start
 
 ### 路由定义
 
-路由目录: `src/server/routers/`
+路由目录: `src/routers/`
   + 除 `help` 以外目录都会自动识别路由
-  + 如 `src/server/routers/demo/test.ts`
+  + 如 `src/routers/demo/test.ts`
     - 对应路径 `http://localhost:6001/demo/test/[route-name]`
   + 你可以添加自定义文件或者文件夹，会自动以目录层级作为路由路径进行注册
 

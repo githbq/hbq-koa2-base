@@ -117,8 +117,10 @@ npm run pstart
 |  ├── app.js
 |  ├── app.js.map
 |  ├── common
+|  ├── controllers
 |  ├── index.js
 |  ├── index.js.map
+|  ├── routers
 |  └── server
 ├── jest.config.js
 ├── package.json
@@ -132,14 +134,16 @@ npm run pstart
 ├── src
 |  ├── app.ts
 |  ├── common
+|  ├── controllers
 |  ├── globals.d.ts
-|  ├── index.test.ts
 |  ├── index.ts
+|  ├── routers
 |  ├── server
 |  └── shims.d.ts
 ├── temp
 |  └── logs
 ├── temp.upload
+|  └── 1
 ├── tsconfig.json
 ├── tslint.json
 ├── upload

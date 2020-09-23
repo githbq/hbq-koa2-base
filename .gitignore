@@ -10,6 +10,7 @@
 node_modules
 ##项目临时文件存放目录
 temp/
+temp.*
 dist/
 build/
 typings/

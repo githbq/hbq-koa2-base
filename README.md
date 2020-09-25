@@ -81,7 +81,7 @@ npm run pstart
 ## 注意事项
 
 1. `npm start` 执行的是 `ts-node` 引导 `src/index.ts` 不需要再监听ts文件实时编译
-2. 默认不主动链接mongodb，对应配置如下
+2. 默认不主动链接 mongodb ，对应配置如下
     - `/src/common/configs/appConfig.ts`
         - useMongodb: false,
         - mongodb: 'mongodb://127.0.0.1:17951/koa2Base',
@@ -92,12 +92,12 @@ npm run pstart
     - `development` 用于标识当前是开发环境
     - `test` 用于标识当前是测试环境  
     - `production` 用于标识当前是生产环境（正式上线环境）
-* `CONFIG_MODE` 用于选择性配置启用哪一个配置文件
+* `CONFIG_MODE` 用于选择启用配置文件
     - `/src/common/configs/appConfig-${CONFIG_MODE}.ts`
 
 ## 如何调试
 
-* 推荐使用 [vscode](https://code.visualstudio.com)开发工具
+* 推荐使用 [vscode](https://code.visualstudio.com) 开发工具
 
 ### 在vscode下调试
 

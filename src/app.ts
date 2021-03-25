@@ -11,11 +11,7 @@ export default {
     //在进行cookie签名时，只有设置 signed 为 true 的时候，才会使用密钥进行加密：
     //ctx.cookies.set('name', 'tobi', { signed: true });
     app.keys = [APP_CONFIG.secret || 'secret key string']
-    const middlewares = [
-      'logger', //记录所用方式与时间
-      'globalError', // 全局错误处理
-      'error', // 使用自定义错误
-      'send', //send
+    const middlewares = [ 
       'favicon', //favicon
       'conditional', //配合etag
       'etag', //etag 客户端缓存处理
@@ -27,6 +23,10 @@ export default {
       ['static', APP_CONFIG.uploadPath, APP_CONFIG.uploadStaticPrefix],
       // 本项目中的public静态文件夹 前缀@
       ['static', ROOT_PATH + '/public', '@'],
+      'logger', //记录所用方式与时间
+      'error', // 使用自定义错误
+      'globalError', // 全局错误处理
+      'send', //send
       'session', //session处理
       'bodyParser', //body解析
       'json', // 传输JSON

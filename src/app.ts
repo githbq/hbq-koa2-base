@@ -31,7 +31,6 @@ export default {
       'bodyParser', //body解析
       'json', // 传输JSON
       'views', //模板文件
-      
       ['router', { debug, logger }]
     ]
     for (let n of middlewares) {
